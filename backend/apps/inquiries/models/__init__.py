@@ -1,0 +1,1 @@
+"""Inquiries models package."""

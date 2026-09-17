@@ -1,0 +1,38 @@
+# ==============================================================================
+# Production Docker Compose — Eric Sherwood Construction
+# Pulls pre-built image from registry with low-memory bounds for shared VPS
+# ==============================================================================
+
+services:
+  web:
+    image: ${DOCKER_IMAGE:-ericsherwood/web:latest}
+    container_name: eric_sherwood_web_prod
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      # Exposes internal port for host reverse-proxy (e.g. Nginx, Traefik, or Caddy)
+      - "${HOST_PORT:-8080}:8000"
+    volumes:
+      - media_volume:/app/backend/media
+    deploy:
+      resources:
+        limits:
+          memory: 300M
+          cpus: "0.75"
+
+  # Optional dedicated Postgres container (can be omitted if using existing DB on VPS)
+  db:
+    image: postgres:16-alpine
+    container_name: eric_sherwood_db_prod
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - pgdata_prod:/var/lib/postgresql/data
+    deploy:
+      resources:
+        limits:
+          memory: 150M
+
+volumes:
+  media_volume:
+  pgdata_prod:

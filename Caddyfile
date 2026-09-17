@@ -1,0 +1,37 @@
+# ==============================================================================
+# Eric Sherwood Construction — Caddyfile Configuration
+# ==============================================================================
+
+{$DOMAIN:localhost} {
+    encode zstd gzip
+
+    # Security Headers
+    header {
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        Permissions-Policy "camera=(), microphone=(), geolocation=()"
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    }
+
+    # API & Admin to Django Backend Container
+    handle /api/* {
+        reverse_proxy web:8000
+    }
+
+    handle /admin/* {
+        reverse_proxy web:8000
+    }
+
+    handle /media/* {
+        root * /srv/media
+        file_server
+    }
+
+    # Static Assets & SPA Fallback
+    handle {
+        root * /srv/frontend/dist
+        try_files {path} /index.html
+        file_server
+    }
+}
