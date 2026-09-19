@@ -1,6 +1,10 @@
-import React, { Suspense, lazy, useEffect } from "react"
-import { createBrowserRouter, useLocation } from "react-router-dom"
+import React, { Suspense, lazy } from "react"
+import { createBrowserRouter, Outlet, ScrollRestoration } from "react-router-dom"
+import { AuthProvider } from "@/features/admin/context/AuthContext"
+import { ProtectedRoute } from "@/features/admin/components/ProtectedRoute"
+import { AdminLayout } from "@/features/admin/components/AdminLayout"
 
+// Public Pages
 const HomePage = lazy(() =>
   import("@/features/home/HomePage").then((m) => ({ default: m.HomePage }))
 )
@@ -36,13 +40,40 @@ const NotFoundPage = lazy(() =>
   }))
 )
 
-/** Scrolls to the top of the page on every route change. */
-function ScrollToTop(): null {
-  const { pathname } = useLocation()
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" })
-  }, [pathname])
-  return null
+// Admin Pages
+const AdminLoginPage = lazy(() =>
+  import("@/features/admin/AdminLoginPage").then((m) => ({ default: m.AdminLoginPage }))
+)
+const DashboardView = lazy(() =>
+  import("@/features/admin/views/DashboardView").then((m) => ({ default: m.DashboardView }))
+)
+const ProjectsView = lazy(() =>
+  import("@/features/admin/views/ProjectsView").then((m) => ({ default: m.ProjectsView }))
+)
+const ServicesView = lazy(() =>
+  import("@/features/admin/views/ServicesView").then((m) => ({ default: m.ServicesView }))
+)
+const TestimonialsView = lazy(() =>
+  import("@/features/admin/views/TestimonialsView").then((m) => ({ default: m.TestimonialsView }))
+)
+const InquiriesView = lazy(() =>
+  import("@/features/admin/views/InquiriesView").then((m) => ({ default: m.InquiriesView }))
+)
+const FAQView = lazy(() =>
+  import("@/features/admin/views/FAQView").then((m) => ({ default: m.FAQView }))
+)
+const SettingsView = lazy(() =>
+  import("@/features/admin/views/SettingsView").then((m) => ({ default: m.SettingsView }))
+)
+
+/** Root layout — renders once, handles scroll restoration for all routes. */
+function RootLayout(): React.JSX.Element {
+  return (
+    <>
+      <ScrollRestoration />
+      <Outlet />
+    </>
+  )
 }
 
 function PageWrapper({ children }: { children: React.ReactNode }): React.JSX.Element {
@@ -54,13 +85,17 @@ function PageWrapper({ children }: { children: React.ReactNode }): React.JSX.Ele
         </div>
       }
     >
-      <ScrollToTop />
       {children}
     </Suspense>
   )
 }
 
 export const router = createBrowserRouter([
+  {
+    // Root layout — provides ScrollRestoration for every route
+    element: <RootLayout />,
+    children: [
+  // Public Routes
   {
     path: "/",
     element: (
@@ -117,6 +152,91 @@ export const router = createBrowserRouter([
       </PageWrapper>
     ),
   },
+
+  // Admin Routes (/admin)
+  {
+    path: "/admin/login",
+    element: (
+      <AuthProvider>
+        <PageWrapper>
+          <AdminLoginPage />
+        </PageWrapper>
+      </AuthProvider>
+    ),
+  },
+  {
+    path: "/admin",
+    element: (
+      <AuthProvider>
+        <ProtectedRoute />
+      </AuthProvider>
+    ),
+    children: [
+      {
+        element: <AdminLayout />,
+        children: [
+          {
+            index: true,
+            element: (
+              <PageWrapper>
+                <DashboardView />
+              </PageWrapper>
+            ),
+          },
+          {
+            path: "projects",
+            element: (
+              <PageWrapper>
+                <ProjectsView />
+              </PageWrapper>
+            ),
+          },
+          {
+            path: "services",
+            element: (
+              <PageWrapper>
+                <ServicesView />
+              </PageWrapper>
+            ),
+          },
+          {
+            path: "testimonials",
+            element: (
+              <PageWrapper>
+                <TestimonialsView />
+              </PageWrapper>
+            ),
+          },
+          {
+            path: "inquiries",
+            element: (
+              <PageWrapper>
+                <InquiriesView />
+              </PageWrapper>
+            ),
+          },
+          {
+            path: "faqs",
+            element: (
+              <PageWrapper>
+                <FAQView />
+              </PageWrapper>
+            ),
+          },
+          {
+            path: "settings",
+            element: (
+              <PageWrapper>
+                <SettingsView />
+              </PageWrapper>
+            ),
+          },
+        ],
+      },
+    ],
+  },
+
+  // Catch-all
   {
     path: "*",
     element: (
@@ -124,5 +244,8 @@ export const router = createBrowserRouter([
         <NotFoundPage />
       </PageWrapper>
     ),
+  },
+  // End of RootLayout children
+  ],
   },
 ])

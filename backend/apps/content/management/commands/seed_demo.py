@@ -39,9 +39,9 @@ class Command(BaseCommand):
                 "postal_code": "94558",
                 "hours": "Monday – Friday: 7:00 AM – 5:00 PM PST",
                 "service_area": "Napa County, Sonoma County, St. Helena, Yountville, Calistoga, Rutherford, Oakville",
-                "linkedin_url": "https://www.linkedin.com",
-                "facebook_url": "https://www.facebook.com",
-                "youtube_url": "https://www.youtube.com",
+                "linkedin_url": "https://www.linkedin.com/company/eric-sherwood-construction/",
+                "facebook_url": "https://www.facebook.com/ericsherwoodconstruction/",
+                "youtube_url": "https://www.youtube.com/watch?v=wQC4ON6EzLg",
             },
         )
         self.stdout.write(self.style.SUCCESS(f"  [Settings] Seeded {site_settings.company_name}"))

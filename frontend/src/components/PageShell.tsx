@@ -2,6 +2,7 @@ import React from "react"
 import { SiteHeader } from "@/components/SiteHeader"
 import { SiteFooter } from "@/components/SiteFooter"
 import { SEO, type SEOProps } from "@/components/SEO"
+import { ChatWidget } from "@/features/chatbot/ChatWidget"
 
 export interface PageShellProps {
   children: React.ReactNode
@@ -25,6 +26,9 @@ export function PageShell({ children, seo }: PageShellProps): React.JSX.Element 
       </main>
 
       <SiteFooter />
+
+      {/* Zero-cost Local Database Chatbot */}
+      <ChatWidget />
     </div>
   )
 }

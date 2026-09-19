@@ -33,6 +33,6 @@ try:
 
     INSTALLED_APPS += ["nplusone.ext.django"]  # noqa: F405
     MIDDLEWARE = ["nplusone.ext.django.NPlusOneMiddleware"] + MIDDLEWARE  # noqa: F405
-    NPLUSONE_RAISE = True
+    NPLUSONE_RAISE = False
 except ImportError:
     pass

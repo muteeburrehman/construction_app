@@ -1,10 +1,11 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { ArrowRight, Phone, Award, MapPin, Clock } from "lucide-react"
+import { ArrowRight, Phone, Award, MapPin, Clock, CheckCircle2 } from "lucide-react"
 import { PageShell } from "@/components/PageShell"
 import { Container } from "@/components/ui/layout"
-import heroImg  from "@/assets/wix/hero_commercial.jpg"
+import heroImg from "@/assets/wix/hero_commercial.jpg"
 import photoImg from "@/assets/wix/card_residential.jpg"
+import ericFishing from "@/assets/wix/eric_fishing.jpg"
 
 const COBALT   = "#1A3A6B"
 const BLUE     = "#2E5BA8"
@@ -80,6 +81,129 @@ export function AboutPage(): React.JSX.Element {
         </Container>
       </section>
 
+      {/* ── Dedicated Meet Eric Sherwood Section (From Original Website) ── */}
+      <section className="py-24 sm:py-32" style={{ background: CLOUD, borderBottom: `1px solid ${PEBBLE}` }}>
+        <Container size="wide">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            {/* Eric Sherwood Photo & Caption */}
+            <div className="lg:col-span-5 flex flex-col items-center sm:items-start">
+              <div
+                style={{
+                  background: WHITE,
+                  padding: "16px",
+                  borderRadius: 12,
+                  boxShadow: "0 10px 30px -5px rgba(26, 58, 107, 0.12)",
+                  border: `1px solid ${PEBBLE}`,
+                  maxWidth: 380,
+                  width: "100%",
+                }}
+              >
+                <div style={{ overflow: "hidden", borderRadius: 8, background: "#E2E8F0" }}>
+                  <img
+                    src={ericFishing}
+                    alt="Eric Sherwood at fishing"
+                    className="w-full object-cover"
+                    style={{ aspectRatio: "1 / 1" }}
+                    loading="lazy"
+                  />
+                </div>
+                <p
+                  className="font-display font-semibold tracking-wide text-center mt-3 mb-1"
+                  style={{ fontSize: "0.875rem", color: SLATE }}
+                >
+                  Eric Sherwood at fishing
+                </p>
+              </div>
+            </div>
+
+            {/* Content from Original Website */}
+            <div className="lg:col-span-7 flex flex-col">
+              <div className="h-[2px] w-12 mb-5" style={{ background: BLUE }} />
+              <h2
+                className="font-display font-extrabold tracking-[-0.035em] leading-tight mb-2"
+                style={{ fontSize: "clamp(2rem, 3.8vw, 2.75rem)", color: CHARCOAL }}
+              >
+                Eric Sherwood
+              </h2>
+              <p
+                className="font-display font-bold tracking-[0.02em] mb-6"
+                style={{ fontSize: "1.125rem", color: BLUE }}
+              >
+                Owner & Principal Contractor of Sherwood Inc.
+              </p>
+
+              <p
+                className="font-body leading-[1.8] mb-8"
+                style={{ fontSize: "1.0625rem", color: SLATE }}
+              >
+                Eric Sherwood's construction journey began in June 1979 when he asked his neighbor for a summer job. This led to years of hands-on experience in various aspects of construction, from basic labor to framing and eventually running his own business.
+              </p>
+
+              <div
+                style={{
+                  background: WHITE,
+                  borderRadius: 10,
+                  padding: "24px 28px",
+                  border: `1px solid ${PEBBLE}`,
+                  boxShadow: "0 2px 10px rgba(0,0,0,0.03)",
+                  marginBottom: "2rem",
+                }}
+              >
+                <h3
+                  className="font-display font-extrabold tracking-[-0.02em] mb-4"
+                  style={{ fontSize: "1.125rem", color: CHARCOAL }}
+                >
+                  Why Choose Us for Your Project?
+                </h3>
+                <ul className="flex flex-col gap-3.5">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 style={{ width: 18, height: 18, color: BLUE, flexShrink: 0, marginTop: 3 }} />
+                    <span className="font-body leading-relaxed" style={{ fontSize: "0.9375rem", color: SLATE }}>
+                      <strong style={{ color: CHARCOAL }}>Experienced, thorough, and detail-oriented:</strong> Over four decades directing high-end architectural estates and commercial winery facilities.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 style={{ width: 18, height: 18, color: BLUE, flexShrink: 0, marginTop: 3 }} />
+                    <span className="font-body leading-relaxed" style={{ fontSize: "0.9375rem", color: SLATE }}>
+                      <strong style={{ color: CHARCOAL }}>Focused on collaborative team efforts:</strong> Partnering seamlessly with premier architects, structural engineers, and artisans with timely execution.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 style={{ width: 18, height: 18, color: BLUE, flexShrink: 0, marginTop: 3 }} />
+                    <span className="font-body leading-relaxed" style={{ fontSize: "0.9375rem", color: SLATE }}>
+                      <strong style={{ color: CHARCOAL }}>Owner on site every morning:</strong> Direct personal oversight and open-book billing with zero surprise markups.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-4">
+                <Link
+                  to="/contact"
+                  className="group inline-flex items-center gap-2 font-display font-semibold rounded-sm px-7 py-3.5 transition-colors duration-200"
+                  style={{ background: BLUE, color: WHITE, fontSize: "0.875rem" }}
+                  onMouseEnter={e => (e.currentTarget.style.background = COBALT)}
+                  onMouseLeave={e => (e.currentTarget.style.background = BLUE)}
+                >
+                  Speak Directly with Eric <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
+                </Link>
+                <a
+                  href="tel:707-255-3875"
+                  className="inline-flex items-center gap-2 font-display font-semibold rounded-sm px-6 py-3.5 transition-colors duration-200"
+                  style={{ border: `1px solid ${PEBBLE}`, color: CHARCOAL, fontSize: "0.875rem", background: WHITE }}
+                  onMouseEnter={e => (e.currentTarget.style.borderColor = BLUE)}
+                  onMouseLeave={e => (e.currentTarget.style.borderColor = PEBBLE)}
+                >
+                  <Phone style={{ width: 14, height: 14, color: BLUE }} />
+                  707-255-3875
+                </a>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
       {/* ── Philosophy + Timeline ── */}
       <section className="py-24 sm:py-32" style={{ background: WHITE }}>
         <Container size="wide">
@@ -107,7 +231,7 @@ export function AboutPage(): React.JSX.Element {
               <div className="p-6 mb-8 rounded-sm" style={{ borderLeft: `4px solid ${BLUE}`, background: "rgba(46,91,168,0.06)" }}>
                 <p className="font-display font-semibold tracking-[0.1em] uppercase mb-1" style={{ fontSize: "0.6rem", color: BLUE }}>General Contractor</p>
                 <p className="font-display font-extrabold tracking-[-0.025em]" style={{ fontSize: "1.25rem", color: CHARCOAL }}>CSLB Lic. 902560</p>
-                <p className="font-body mt-2" style={{ fontSize: "0.875rem", color: IRON }}>Continuously licensed in good standing with the California State License Board.</p>
+                <p className="font-body mt-2" style={{ fontSize: "0.875rem", color: IRON }}>Continuously licensed in good standing with the California State License Board since 1979.</p>
               </div>
 
               <div className="flex flex-wrap gap-4">
@@ -176,4 +300,3 @@ export function AboutPage(): React.JSX.Element {
     </PageShell>
   )
 }
-

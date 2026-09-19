@@ -1,5 +1,6 @@
 """Base settings for Eric Sherwood Construction project."""
 
+from datetime import timedelta
 from pathlib import Path
 
 import environ
@@ -46,6 +47,8 @@ LOCAL_APPS = [
     "apps.core.apps.CoreConfig",
     "apps.content.apps.ContentConfig",
     "apps.inquiries.apps.InquiriesConfig",
+    "apps.auth_api.apps.AuthApiConfig",
+    "apps.chatbot.apps.ChatbotConfig",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -118,6 +121,10 @@ CORS_ALLOW_CREDENTIALS = True
 # REST Framework
 REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+    ],
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 12,
     "DEFAULT_THROTTLE_CLASSES": [
@@ -135,6 +142,18 @@ REST_FRAMEWORK = {
     ],
 }
 
+# Simple JWT Settings
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
+    "ROTATE_REFRESH_TOKENS": True,
+    "BLACKLIST_AFTER_ROTATION": False,
+    "AUTH_HEADER_TYPES": ("Bearer",),
+    "AUTH_HEADER_NAME": "HTTP_AUTHORIZATION",
+    "USER_ID_FIELD": "id",
+    "USER_ID_CLAIM": "user_id",
+}
+
 # DRF Spectacular OpenAPI
 SPECTACULAR_SETTINGS = {
     "TITLE": "Eric Sherwood Construction API",
@@ -142,3 +161,4 @@ SPECTACULAR_SETTINGS = {
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
 }
+

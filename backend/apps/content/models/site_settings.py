@@ -41,9 +41,18 @@ class SiteSettings(BaseModel):
     )
 
     # Socials
-    linkedin_url = models.URLField(blank=True, default="https://www.linkedin.com")
-    facebook_url = models.URLField(blank=True, default="https://www.facebook.com")
-    youtube_url = models.URLField(blank=True, default="https://www.youtube.com")
+    linkedin_url = models.URLField(
+        blank=True,
+        default="https://www.linkedin.com/company/eric-sherwood-construction/",
+    )
+    facebook_url = models.URLField(
+        blank=True,
+        default="https://www.facebook.com/ericsherwoodconstruction/",
+    )
+    youtube_url = models.URLField(
+        blank=True,
+        default="https://www.youtube.com/watch?v=wQC4ON6EzLg",
+    )
 
     class Meta(BaseModel.Meta):
         verbose_name = "Site Settings"
@@ -72,3 +81,8 @@ class SiteSettings(BaseModel):
                 settings_obj = cls.objects.create()
             cache.set(SITE_SETTINGS_CACHE_KEY, settings_obj, CACHE_TIMEOUT_SECONDS)
         return settings_obj
+
+    @classmethod
+    def get_solo(cls):
+        """Convenience alias for get_settings."""
+        return cls.get_settings()

@@ -23,18 +23,92 @@ const NAV_COLS = [
     links: [
       { label: "About",   href: "/about" },
       { label: "Contact", href: "/contact" },
+      { label: "Admin Portal", href: "/admin" },
     ],
   },
 ]
 
+// Official Social Media Icons matching original website
+function YouTubeIcon(): React.JSX.Element {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="24" height="24" rx="4" fill="#FF0000" />
+      <path d="M10 8.5L15.5 12L10 15.5V8.5Z" fill="white" />
+    </svg>
+  )
+}
+
+function LinkedInIcon(): React.JSX.Element {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="24" height="24" rx="4" fill="#0A66C2" />
+      <path
+        d="M6.5 6.5C6.5 7.32843 5.82843 8 5 8C4.17157 8 3.5 7.32843 3.5 6.5C3.5 5.67157 4.17157 5 5 5C5.82843 5 6.5 5.67157 6.5 6.5ZM6.5 9.5H3.5V19H6.5V9.5ZM11.5 9.5H8.5V19H11.5V14.17C11.5 11.55 14.86 11.37 14.86 14.17V19H17.86V13.25C17.86 8.78 12.72 8.94 11.5 11.23V9.5Z"
+        fill="white"
+      />
+    </svg>
+  )
+}
+
+function FacebookIcon(): React.JSX.Element {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="24" height="24" rx="4" fill="#1877F2" />
+      <path
+        d="M15 11.5H12.5V19H9.5V11.5H8V9H9.5V7.25C9.5 5.87 10.38 5 11.77 5C12.44 5 13.1 5.08 13.1 5.08V6.58H12.33C11.64 6.58 11.43 7.01 11.43 7.45V9H14.85L15 11.5Z"
+        fill="white"
+      />
+    </svg>
+  )
+}
+
+interface SiteSettingsData {
+  company_name: string
+  phone: string
+  email: string
+  license_number: string
+  youtube_url: string
+  linkedin_url: string
+  facebook_url: string
+}
+
+const DEFAULT_SETTINGS: SiteSettingsData = {
+  company_name: "Eric Sherwood Construction",
+  phone: "707-255-3875",
+  email: "eric@ericsherwoodconstruction.com",
+  license_number: "CSLB Lic. 902560",
+  youtube_url: "https://www.youtube.com/watch?v=wQC4ON6EzLg",
+  linkedin_url: "https://www.linkedin.com/company/eric-sherwood-construction/",
+  facebook_url: "https://www.facebook.com/ericsherwoodconstruction/",
+}
+
 export function SiteFooter(): React.JSX.Element {
+  const [settings, setSettings] = React.useState<SiteSettingsData>(DEFAULT_SETTINGS)
+
+  React.useEffect(() => {
+    fetch("/api/v1/site-settings/")
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to load settings")
+        return res.json()
+      })
+      .then((data: Partial<SiteSettingsData>) => {
+        setSettings((prev) => ({
+          ...prev,
+          ...data,
+        }))
+      })
+      .catch(() => {
+        // Fallback silently to DEFAULT_SETTINGS
+      })
+  }, [])
+
   return (
     <footer style={{ background: CHARCOAL }}>
 
       {/* ── CTA Band ── */}
       <div style={{ borderBottom: "1px solid rgba(248,249,252,0.07)" }}>
         <Container size="wide">
-          <div className="py-16 sm:py-20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
+          <div className="py-16 sm:py-20 flex flex-col sm:row items-start sm:items-center justify-between gap-8">
             <div>
               <p
                 className="font-display font-semibold tracking-[0.12em] uppercase mb-3"
@@ -101,36 +175,85 @@ export function SiteFooter(): React.JSX.Element {
               Owner-led, on site every morning.
             </p>
 
-            <ul className="flex flex-col gap-3">
+            {/* Direct Contact Details */}
+            <ul className="flex flex-col gap-3 mb-6">
               <li>
                 <a
-                  href="tel:707-255-3875"
+                  href={`tel:${settings.phone.replace(/[^0-9+]/g, "")}`}
                   className="flex items-center gap-2.5 text-sm font-display transition-colors"
-                  style={{ color: "rgba(248,249,252,0.45)" }}
+                  style={{ color: "rgba(248,249,252,0.65)" }}
                   onMouseEnter={e => (e.currentTarget.style.color = "#F8F9FC")}
-                  onMouseLeave={e => (e.currentTarget.style.color = "rgba(248,249,252,0.45)")}
+                  onMouseLeave={e => (e.currentTarget.style.color = "rgba(248,249,252,0.65)")}
                 >
                   <Phone style={{ width: 13, height: 13, color: BLUE, flexShrink: 0 }} />
-                  707-255-3875
+                  {settings.phone}
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:eric@ericsherwoodconstruction.com"
+                  href={`mailto:${settings.email}`}
                   className="flex items-center gap-2.5 text-sm font-display transition-colors"
-                  style={{ color: "rgba(248,249,252,0.45)" }}
+                  style={{ color: "rgba(248,249,252,0.65)" }}
                   onMouseEnter={e => (e.currentTarget.style.color = "#F8F9FC")}
-                  onMouseLeave={e => (e.currentTarget.style.color = "rgba(248,249,252,0.45)")}
+                  onMouseLeave={e => (e.currentTarget.style.color = "rgba(248,249,252,0.65)")}
                 >
                   <Mail style={{ width: 13, height: 13, color: BLUE, flexShrink: 0 }} />
-                  eric@ericsherwoodconstruction.com
+                  {settings.email}
                 </a>
               </li>
-              <li className="flex items-center gap-2.5 text-sm font-display" style={{ color: "rgba(248,249,252,0.28)" }}>
+              <li className="flex items-center gap-2.5 text-sm font-display" style={{ color: "rgba(248,249,252,0.38)" }}>
                 <MapPin style={{ width: 13, height: 13, color: IRON, flexShrink: 0 }} />
                 Napa Valley, CA
               </li>
             </ul>
+
+            {/* Social Media Links from original website */}
+            <div>
+              <p
+                className="font-display font-semibold tracking-[0.1em] uppercase mb-2.5"
+                style={{ fontSize: "0.625rem", color: "rgba(248,249,252,0.35)" }}
+              >
+                Connect With Us
+              </p>
+              <div className="flex items-center gap-3">
+                {settings.youtube_url && (
+                  <a
+                    href={settings.youtube_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Eric Sherwood Construction on YouTube"
+                    className="transition-transform hover:scale-105"
+                    title="YouTube"
+                  >
+                    <YouTubeIcon />
+                  </a>
+                )}
+                {settings.linkedin_url && (
+                  <a
+                    href={settings.linkedin_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Eric Sherwood Construction on LinkedIn"
+                    className="transition-transform hover:scale-105"
+                    title="LinkedIn"
+                  >
+                    <LinkedInIcon />
+                  </a>
+                )}
+                {settings.facebook_url && (
+                  <a
+                    href={settings.facebook_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Eric Sherwood Construction on Facebook"
+                    className="transition-transform hover:scale-105"
+                    title="Facebook"
+                  >
+                    <FacebookIcon />
+                  </a>
+                )}
+              </div>
+            </div>
           </div>
 
           {/* Nav Columns */}
@@ -138,7 +261,7 @@ export function SiteFooter(): React.JSX.Element {
             <div key={col.heading}>
               <p
                 className="font-display font-semibold tracking-[0.1em] uppercase mb-5"
-                style={{ fontSize: "0.625rem", color: "rgba(248,249,252,0.22)" }}
+                style={{ fontSize: "0.625rem", color: "rgba(248,249,252,0.35)" }}
               >
                 {col.heading}
               </p>
@@ -148,9 +271,9 @@ export function SiteFooter(): React.JSX.Element {
                     <Link
                       to={link.href}
                       className="text-sm font-display font-semibold transition-colors"
-                      style={{ color: "rgba(248,249,252,0.50)" }}
+                      style={{ color: "rgba(248,249,252,0.55)" }}
                       onMouseEnter={e => (e.currentTarget.style.color = "#F8F9FC")}
-                      onMouseLeave={e => (e.currentTarget.style.color = "rgba(248,249,252,0.50)")}
+                      onMouseLeave={e => (e.currentTarget.style.color = "rgba(248,249,252,0.55)")}
                     >
                       {link.label}
                     </Link>
@@ -161,20 +284,59 @@ export function SiteFooter(): React.JSX.Element {
           ))}
         </div>
 
-        {/* Bottom Bar */}
+        {/* Bottom Bar matching original site */}
         <div
-          className="py-6 flex flex-col sm:flex-row items-center justify-between gap-3"
+          className="py-8 flex flex-col sm:flex-row items-center justify-between gap-4"
           style={{ borderTop: "1px solid rgba(248,249,252,0.07)" }}
         >
-          <p className="text-xs font-display" style={{ color: "rgba(248,249,252,0.22)" }}>
-            © {new Date().getFullYear()} Eric Sherwood Construction. All rights reserved.
-          </p>
-          <p className="text-xs font-display" style={{ color: "rgba(248,249,252,0.16)" }}>
-            CSLB Lic. 902560 · Napa Valley, CA
-          </p>
+          <div className="flex items-center gap-3">
+            <img src={logoSq} alt="Sherwood Construction" className="w-6 h-6 rounded-sm object-cover opacity-60" />
+            <p className="text-xs font-display" style={{ color: "rgba(248,249,252,0.40)" }}>
+              © {new Date().getFullYear()}, Sherwood Inc. / Eric Sherwood Construction.
+            </p>
+          </div>
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-2">
+              {settings.youtube_url && (
+                <a
+                  href={settings.youtube_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="opacity-75 hover:opacity-100 transition-opacity"
+                  title="YouTube"
+                >
+                  <YouTubeIcon />
+                </a>
+              )}
+              {settings.linkedin_url && (
+                <a
+                  href={settings.linkedin_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="opacity-75 hover:opacity-100 transition-opacity"
+                  title="LinkedIn"
+                >
+                  <LinkedInIcon />
+                </a>
+              )}
+              {settings.facebook_url && (
+                <a
+                  href={settings.facebook_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="opacity-75 hover:opacity-100 transition-opacity"
+                  title="Facebook"
+                >
+                  <FacebookIcon />
+                </a>
+              )}
+            </div>
+            <p className="text-xs font-display font-semibold" style={{ color: "#4A7DD4" }}>
+              {settings.license_number}
+            </p>
+          </div>
         </div>
       </Container>
     </footer>
   )
 }
-
