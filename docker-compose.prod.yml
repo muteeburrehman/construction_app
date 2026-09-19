@@ -1,35 +1,34 @@
-# ==============================================================================
-# Production Docker Compose — Eric Sherwood Construction
-# Pulls pre-built image from registry with low-memory bounds for shared VPS
-# ==============================================================================
+name: construction_app
 
 services:
   web:
     image: ${DOCKER_IMAGE:-muteebu007/construction-app:latest}
-    container_name: eric_sherwood_web_prod
+    container_name: construction_web_prod
     restart: unless-stopped
     env_file: .env
     environment:
       - DJANGO_SETTINGS_MODULE=config.settings.prod
       - DATABASE_URL=postgres://${POSTGRES_USER:-eric_user}:${POSTGRES_PASSWORD:-eric_secret_napa_2026}@db:5432/${POSTGRES_DB:-eric_sherwood_db}
-      - ALLOWED_HOSTS=${ALLOWED_HOSTS:-*}
+      - ALLOWED_HOSTS=${ALLOWED_HOSTS:-construction.muteeblabs.com,localhost,127.0.0.1}
     ports:
-      # Exposes port on host (e.g. 8080 or map directly to 80)
-      - "${HOST_PORT:-8080}:8000"
+      # Port 8085 prevents collisions with Muteeb Portfolio (80/443) and Victory Acres (9080/9443)
+      - "${HOST_PORT:-8085}:8000"
     volumes:
       - media_volume:/app/backend/media
     depends_on:
       - db
+    networks:
+      - construction_net
     deploy:
       resources:
         limits:
           memory: 350M
           cpus: "0.75"
 
-  # Dedicated lightweight Postgres container (uses < 50MB RAM)
+  # Dedicated lightweight Postgres container (isolated, uses < 50MB RAM)
   db:
     image: postgres:16-alpine
-    container_name: eric_sherwood_db_prod
+    container_name: construction_db_prod
     restart: unless-stopped
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-eric_sherwood_db}
@@ -37,6 +36,8 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-eric_secret_napa_2026}
     volumes:
       - pgdata_prod:/var/lib/postgresql/data
+    networks:
+      - construction_net
     deploy:
       resources:
         limits:
@@ -44,4 +45,10 @@ services:
 
 volumes:
   media_volume:
+    name: construction_media_volume
   pgdata_prod:
+    name: construction_pgdata_prod
+
+networks:
+  construction_net:
+    name: construction_net

@@ -135,6 +135,8 @@ CSRF_TRUSTED_ORIGINS = env.list(
         "http://localhost:8000",
         "http://127.0.0.1:8000",
         "http://localhost:8080",
+        "http://localhost:8085",
+        "http://127.0.0.1:8085",
         "https://construction.muteeblabs.com",
         "http://construction.muteeblabs.com",
     ],
