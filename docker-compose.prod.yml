@@ -5,27 +5,36 @@
 
 services:
   web:
-    image: ${DOCKER_IMAGE:-ericsherwood/web:latest}
+    image: ${DOCKER_IMAGE:-muteebu007/construction-app:latest}
     container_name: eric_sherwood_web_prod
     restart: unless-stopped
     env_file: .env
+    environment:
+      - DJANGO_SETTINGS_MODULE=config.settings.prod
+      - DATABASE_URL=postgres://${POSTGRES_USER:-eric_user}:${POSTGRES_PASSWORD:-eric_secret_napa_2026}@db:5432/${POSTGRES_DB:-eric_sherwood_db}
+      - ALLOWED_HOSTS=${ALLOWED_HOSTS:-*}
     ports:
-      # Exposes internal port for host reverse-proxy (e.g. Nginx, Traefik, or Caddy)
+      # Exposes port on host (e.g. 8080 or map directly to 80)
       - "${HOST_PORT:-8080}:8000"
     volumes:
       - media_volume:/app/backend/media
+    depends_on:
+      - db
     deploy:
       resources:
         limits:
-          memory: 300M
+          memory: 350M
           cpus: "0.75"
 
-  # Optional dedicated Postgres container (can be omitted if using existing DB on VPS)
+  # Dedicated lightweight Postgres container (uses < 50MB RAM)
   db:
     image: postgres:16-alpine
     container_name: eric_sherwood_db_prod
     restart: unless-stopped
-    env_file: .env
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-eric_sherwood_db}
+      POSTGRES_USER: ${POSTGRES_USER:-eric_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-eric_secret_napa_2026}
     volumes:
       - pgdata_prod:/var/lib/postgresql/data
     deploy:

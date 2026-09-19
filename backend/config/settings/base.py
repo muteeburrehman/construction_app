@@ -109,15 +109,36 @@ USE_TZ = True
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
+# Frontend SPA distribution directory
+FRONTEND_DIST_DIR = BASE_DIR.parent / "frontend" / "dist"
+if not FRONTEND_DIST_DIR.exists():
+    FRONTEND_DIST_DIR = Path("/app/frontend/dist")
+
+if FRONTEND_DIST_DIR.exists():
+    WHITENOISE_ROOT = str(FRONTEND_DIST_DIR)
+    WHITENOISE_INDEX_FILE = True
+
 # Media files
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# CORS
+# CORS & CSRF
 CORS_ALLOWED_ORIGINS = env.list("CORS_ALLOWED_ORIGINS")
 CORS_ALLOW_CREDENTIALS = True
+CSRF_TRUSTED_ORIGINS = env.list(
+    "CSRF_TRUSTED_ORIGINS",
+    default=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "http://localhost:8000",
+        "http://127.0.0.1:8000",
+        "http://localhost:8080",
+        "https://construction.muteeblabs.com",
+        "http://construction.muteeblabs.com",
+    ],
+)
 
 # REST Framework
 REST_FRAMEWORK = {

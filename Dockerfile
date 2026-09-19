@@ -44,6 +44,9 @@ COPY --from=frontend-builder /app/frontend/dist /app/frontend/dist
 
 WORKDIR /app/backend
 
+# Collect static assets into staticfiles
+RUN DJANGO_SETTINGS_MODULE=config.settings.prod python manage.py collectstatic --noinput --clear
+
 # Create non-root user
 RUN useradd -m -u 1000 appuser && \
     mkdir -p /app/backend/media /app/backend/staticfiles && \
@@ -53,4 +56,4 @@ USER appuser
 
 EXPOSE 8000
 
-CMD ["python", "-m", "gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "2", "--timeout", "60"]
+CMD ["sh", "-c", "python manage.py migrate --noinput && python -m gunicorn config.wsgi:application --bind 0.0.0.0:8000 --workers 2 --timeout 60"]

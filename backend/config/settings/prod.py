@@ -17,6 +17,11 @@ CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_HTTPONLY = True
 CSRF_COOKIE_HTTPONLY = True
 
+# Reverse Proxy SSL headers (essential for Nginx/Caddy/Cloudflare behind domains)
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+USE_X_FORWARDED_HOST = True
+USE_X_FORWARDED_PORT = True
+
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
