@@ -5,7 +5,7 @@ import { PageShell } from "@/components/PageShell"
 import { Container } from "@/components/ui/layout"
 import heroImg from "@/assets/wix/hero_commercial.jpg"
 import photoImg from "@/assets/wix/card_residential.jpg"
-import aboutHero from "@/assets/wix/about-hero.jpg"
+import aboutHero from "@/assets/wix/project_exterior_pool.jpg"
 
 const COBALT   = "#1A3A6B"
 const BLUE     = "#2E5BA8"

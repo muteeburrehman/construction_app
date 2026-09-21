@@ -24,7 +24,7 @@ import heroImg from "@/assets/wix/hero_home.jpg"
 import cardRes from "@/assets/wix/card_residential.jpg"
 import cardCom from "@/assets/wix/card_commercial.jpg"
 import cardHome from "@/assets/wix/card_home.jpg"
-import builderCraftImg from "@/assets/wix/about-hero.jpg"
+import builderCraftImg from "@/assets/wix/project_interior_living.jpg"
 
 const COBALT = "#1A3A6B"
 const BLUE = "#2E5BA8"
