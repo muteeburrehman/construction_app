@@ -95,7 +95,7 @@ def query_chatbot(user_message: str, session_id: str = "") -> dict[str, Any]:
     # Phone / Contact intent
     if any(word in tokens for word in ["phone", "call", "contact", "email", "reach", "number", "talk"]):
         phone = settings.phone or "(707) 555-0192"
-        email = settings.email or "contact@construction.muteeblabs.com"
+        email = settings.email or "info@muteeblabs.com"
         response_text = (
             f"You can reach our team and project leads directly at {phone} or via email at {email}. "
             f"We also welcome project inquiries through our online estimate request form."

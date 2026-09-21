@@ -15,7 +15,7 @@ class Command(BaseCommand):
         admin_user, created = User.objects.get_or_create(
             username="admin",
             defaults={
-                "email": "admin@construction.muteeblabs.com",
+                "email": "info@muteeblabs.com",
                 "first_name": "Apex",
                 "last_name": "Admin",
                 "is_staff": True,

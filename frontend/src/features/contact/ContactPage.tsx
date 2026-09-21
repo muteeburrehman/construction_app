@@ -23,7 +23,7 @@ const WHITE    = "#FFFFFF"
 
 const CONTACT_ITEMS = [
   { icon: Phone, primary: "(707) 555-0192", secondary: "Monday – Friday, 7:00 AM – 5:00 PM PST", href: "tel:707-555-0192" },
-  { icon: Mail, primary: "contact@construction.muteeblabs.com", secondary: "Plan sets & project documentation", href: "mailto:contact@construction.muteeblabs.com" },
+  { icon: Mail, primary: "info@muteeblabs.com", secondary: "Plan sets & project documentation", href: "mailto:info@muteeblabs.com" },
 ]
 
 export function ContactPage(): React.JSX.Element {

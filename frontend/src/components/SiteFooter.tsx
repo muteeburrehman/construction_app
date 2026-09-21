@@ -74,7 +74,7 @@ interface SiteSettingsData {
 const DEFAULT_SETTINGS: SiteSettingsData = {
   company_name: "Apex Construction Group",
   phone: "(707) 555-0192",
-  email: "contact@construction.muteeblabs.com",
+  email: "info@muteeblabs.com",
   license_number: "Licensed, Bonded & Insured (Lic. #849201)",
   youtube_url: "",
   linkedin_url: "",

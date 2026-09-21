@@ -21,7 +21,7 @@ class SiteSettings(BaseModel):
         help_text="Brand headline",
     )
     phone = models.CharField(max_length=30, default="707-555-0192")
-    email = models.EmailField(default="contact@construction.muteeblabs.com")
+    email = models.EmailField(default="info@muteeblabs.com")
     license_number = models.CharField(max_length=50, default="Licensed & Insured (Lic. #849201)")
     founding_year = models.PositiveIntegerField(default=1998)
 
