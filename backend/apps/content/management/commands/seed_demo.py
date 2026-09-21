@@ -1,4 +1,4 @@
-"""Management command to seed realistic demo data for Eric Sherwood Construction."""
+"""Management command to seed realistic demo data for Apex Construction Group."""
 from pathlib import Path
 from django.conf import settings
 from django.core.files import File
@@ -28,20 +28,20 @@ class Command(BaseCommand):
         site_settings, created = SiteSettings.objects.update_or_create(
             id=SiteSettings.objects.first().id if SiteSettings.objects.exists() else None,
             defaults={
-                "company_name": "Eric Sherwood Construction",
-                "tagline": "Building in the Napa Valley since 1979",
-                "phone": "707-255-3875",
-                "email": "eric@ericsherwoodconstruction.com",
-                "license_number": "CSLB Lic. 902560",
-                "founding_year": 1979,
+                "company_name": "Apex Construction Group",
+                "tagline": "Premier Custom Residential & Commercial Builders",
+                "phone": "707-555-0192",
+                "email": "contact@construction.muteeblabs.com",
+                "license_number": "Licensed & Insured (Lic. #849201)",
+                "founding_year": 1998,
                 "city": "Napa",
                 "state": "California",
                 "postal_code": "94558",
                 "hours": "Monday – Friday: 7:00 AM – 5:00 PM PST",
                 "service_area": "Napa County, Sonoma County, St. Helena, Yountville, Calistoga, Rutherford, Oakville",
-                "linkedin_url": "https://www.linkedin.com/company/eric-sherwood-construction/",
-                "facebook_url": "https://www.facebook.com/ericsherwoodconstruction/",
-                "youtube_url": "https://www.youtube.com/watch?v=wQC4ON6EzLg",
+                "linkedin_url": "",
+                "facebook_url": "",
+                "youtube_url": "",
             },
         )
         self.stdout.write(self.style.SUCCESS(f"  [Settings] Seeded {site_settings.company_name}"))
@@ -54,10 +54,10 @@ class Command(BaseCommand):
                 "category": Service.CATEGORY_RESIDENTIAL,
                 "summary": "Estate residences, ground-up architectural homes, and complex hill-terrain construction throughout Napa and Sonoma.",
                 "body": (
-                    "For over four decades, Eric Sherwood Construction has partnered with discerning homeowners "
-                    "and renowned architects to build enduring residences in the Napa Valley. From complex hill foundations "
+                    "For over 25 years, Apex Construction Group has partnered with discerning homeowners "
+                    "and renowned architects to build enduring residences. From complex hill foundations "
                     "and wildland-urban interface (WUI) compliance to precision timber framing and hand-finished stone, "
-                    "every phase is directed by the contractor on site."
+                    "every phase is directed with uncompromising master craftsmanship."
                 ),
                 "capabilities": [
                     "Ground-Up Estate Construction",
@@ -296,7 +296,7 @@ class Command(BaseCommand):
                 "author": "David & Marcus L.",
                 "role_or_location": "Estate Owners, Silverado Trail, Yountville",
                 "quote": (
-                    "Eric is on site every morning before the sun clears the ridge. His open-book time and materials "
+                    "The team was on site every morning before the sun cleared the ridge. Their transparent open-book "
                     "billing meant we knew where every dollar went, and the craftsmanship on our framing and stone masonry is unmatched."
                 ),
                 "project_slug": "silverado-trail-estate",
@@ -306,8 +306,8 @@ class Command(BaseCommand):
                 "author": "Sarah K., Principal Architect",
                 "role_or_location": "San Francisco & St. Helena Architectural Studio",
                 "quote": (
-                    "Working with Eric Sherwood is a true collaboration. He understands how to translate delicate architectural "
-                    "details into durable, seismic-rated field reality. He solves complex engineering issues before they become delays."
+                    "Working with Apex Construction Group is a true collaboration. They understand how to translate delicate architectural "
+                    "details into durable, seismic-rated field reality and solve complex engineering issues before they become delays."
                 ),
                 "project_slug": "st-helena-vineyard-residence",
                 "order": 2,
@@ -316,7 +316,7 @@ class Command(BaseCommand):
                 "author": "Robert M., Managing Partner",
                 "role_or_location": "Rutherford Estate Winery",
                 "quote": (
-                    "When expanding our tasting room, we couldn't afford downtime during harvest. Eric phased the construction "
+                    "When expanding our tasting room, we couldn't afford downtime during harvest. The project leads phased the construction "
                     "flawlessly, delivered on schedule, and the finished millwork routinely receives compliments from our guests."
                 ),
                 "project_slug": "rutherford-winery-hospitality-pavilion",

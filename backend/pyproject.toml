@@ -1,7 +1,7 @@
 [project]
-name = "eric-sherwood-backend"
+name = "construction-platform-backend"
 version = "0.1.0"
-description = "Eric Sherwood Construction backend API"
+description = "Apex Construction Group backend API"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [

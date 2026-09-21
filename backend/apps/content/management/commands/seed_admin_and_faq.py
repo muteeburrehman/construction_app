@@ -15,9 +15,9 @@ class Command(BaseCommand):
         admin_user, created = User.objects.get_or_create(
             username="admin",
             defaults={
-                "email": "admin@ericsherwoodconstruction.com",
-                "first_name": "Eric",
-                "last_name": "Sherwood",
+                "email": "admin@construction.muteeblabs.com",
+                "first_name": "Apex",
+                "last_name": "Admin",
                 "is_staff": True,
                 "is_superuser": True,
             },
@@ -32,7 +32,7 @@ class Command(BaseCommand):
         faqs_data = [
             {
                 "question": "What areas in Northern California do you serve?",
-                "answer": "Eric Sherwood Construction operates primarily in Napa County and Sonoma County, including Napa, St. Helena, Yountville, Calistoga, Rutherford, Oakville, and surrounding wine country estates.",
+                "answer": "Apex Construction Group operates primarily in Napa County and Sonoma County, including Napa, St. Helena, Yountville, Calistoga, Rutherford, Oakville, and surrounding wine country estates.",
                 "category": FAQ.CATEGORY_GENERAL,
                 "keywords": "area, location, napa, sonoma, yountville, st helena, calistoga, where, serve",
                 "order": 1,
@@ -40,7 +40,7 @@ class Command(BaseCommand):
             },
             {
                 "question": "What is your California contractor license number and insurance coverage?",
-                "answer": "We hold California Contractors State License Board (CSLB) License #902560 (Class B - General Building Contractor). We carry comprehensive general liability insurance, full workers' compensation coverage, and surety bonding exceeding state standards.",
+                "answer": "We hold California Contractors State License Board (CSLB) License #849201 (Class B - General Building Contractor). We carry comprehensive general liability insurance, full workers' compensation coverage, and surety bonding exceeding state standards.",
                 "category": FAQ.CATEGORY_LICENSING,
                 "keywords": "license, cslb, insured, insurance, bond, bonded, legal, state board",
                 "order": 2,
@@ -72,7 +72,7 @@ class Command(BaseCommand):
             },
             {
                 "question": "How do you manage the pre-construction and permitting phase?",
-                "answer": "We collaborate closely with your architect and structural engineer during early schematic design to provide constructability reviews, structural value engineering, and preliminary budgets. Our 40+ years of working with Napa and Sonoma county planning departments streamlines the permit approval process.",
+                "answer": "We collaborate closely with your architect and structural engineer during early schematic design to provide constructability reviews, structural value engineering, and preliminary budgets. Our 25+ years of working with local county planning departments streamlines the permit approval process.",
                 "category": FAQ.CATEGORY_PROCESS,
                 "keywords": "pre-construction, permits, permitting, process, architect, planning, engineering, timeline",
                 "order": 6,
@@ -80,7 +80,7 @@ class Command(BaseCommand):
             },
             {
                 "question": "How can I schedule a consultation or request an estimate?",
-                "answer": "You can call Eric Sherwood directly at (707) 255-3875 or submit your project details through our website estimate form. We typically respond within 24 to 48 business hours to review your architectural concepts.",
+                "answer": "You can contact our project team directly at (707) 555-0192 or submit your project details through our website estimate form. We typically respond within 24 to 48 business hours to review your architectural concepts.",
                 "category": FAQ.CATEGORY_GENERAL,
                 "keywords": "contact, call, phone, schedule, consultation, meet, quote, estimate form",
                 "order": 7,
@@ -166,7 +166,7 @@ class Command(BaseCommand):
             {
                 "session_id": "demo-session-102",
                 "user_message": "What is your license number?",
-                "response_text": "Eric Sherwood Construction is fully licensed, bonded, and insured in California. Our CSLB License number is #902560.",
+                "response_text": "Apex Construction Group is fully licensed, bonded, and insured in California. Our CSLB License number is #849201.",
                 "source": ChatLog.SOURCE_SETTINGS,
                 "matched_intent": "intent:license",
             },

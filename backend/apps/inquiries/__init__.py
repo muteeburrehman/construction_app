@@ -1,1 +1,1 @@
-"""Inquiries app for Eric Sherwood Construction."""
+"""Inquiries app for Apex Construction Group."""

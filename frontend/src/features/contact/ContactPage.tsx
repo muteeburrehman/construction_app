@@ -22,8 +22,8 @@ const PEBBLE   = "#DDE2EC"
 const WHITE    = "#FFFFFF"
 
 const CONTACT_ITEMS = [
-  { icon: Phone, primary: "707-255-3875", secondary: "Monday – Friday, 7:00 AM – 5:00 PM PST", href: "tel:707-255-3875" },
-  { icon: Mail, primary: "eric@ericsherwoodconstruction.com", secondary: "Plan sets & project documentation", href: "mailto:eric@ericsherwoodconstruction.com" },
+  { icon: Phone, primary: "(707) 555-0192", secondary: "Monday – Friday, 7:00 AM – 5:00 PM PST", href: "tel:707-555-0192" },
+  { icon: Mail, primary: "contact@construction.muteeblabs.com", secondary: "Plan sets & project documentation", href: "mailto:contact@construction.muteeblabs.com" },
 ]
 
 export function ContactPage(): React.JSX.Element {
@@ -37,8 +37,8 @@ export function ContactPage(): React.JSX.Element {
   return (
     <PageShell
       seo={{
-        title: "Contact & Request an Estimate | Eric Sherwood Construction",
-        description: "Start your Napa Valley custom residential or commercial building project. Call 707-255-3875 or submit an estimate request.",
+        title: "Contact & Request an Estimate | Apex Construction Group",
+        description: "Start your custom residential or commercial building project. Call (707) 555-0192 or submit an estimate request.",
       }}
     >
       {/* ── Page Header ── */}
@@ -53,7 +53,7 @@ export function ContactPage(): React.JSX.Element {
               Request an Estimate
             </h1>
             <p className="font-body leading-[1.7]" style={{ fontSize: "1.0625rem", color: "rgba(248,249,252,0.52)", maxWidth: "52ch" }}>
-              Direct builder consultation for projects in Napa and Sonoma counties.
+              Direct builder consultation for projects in Napa Valley and Northern California.
               We review site conditions, architectural plans, and preliminary budgets.
             </p>
           </div>
@@ -73,7 +73,7 @@ export function ContactPage(): React.JSX.Element {
                 </h2>
                 <p className="font-body leading-[1.7]" style={{ fontSize: "0.9375rem", color: SLATE }}>
                   For immediate discussion regarding land parcels, architectural
-                  sets, or urgent site inquiries, call Eric directly.
+                  sets, or urgent site inquiries, call our project office directly.
                 </p>
               </div>
 
@@ -113,8 +113,8 @@ export function ContactPage(): React.JSX.Element {
               {/* License note */}
               <div className="p-5 rounded-sm" style={{ background: "rgba(46,91,168,0.07)", border: "1px solid rgba(46,91,168,0.18)" }}>
                 <p className="font-display font-semibold tracking-[0.08em] uppercase mb-1" style={{ fontSize: "0.5625rem", color: BLUE }}>California State License Board</p>
-                <p className="font-display font-extrabold tracking-[-0.025em]" style={{ fontSize: "1.125rem", color: CHARCOAL }}>CSLB Lic. 902560</p>
-                <p className="font-body mt-1.5" style={{ fontSize: "0.8125rem", color: IRON }}>General Contractor, continuously licensed since 1979.</p>
+                <p className="font-display font-extrabold tracking-[-0.025em]" style={{ fontSize: "1.125rem", color: CHARCOAL }}>CSLB Lic. #849201</p>
+                <p className="font-body mt-1.5" style={{ fontSize: "0.8125rem", color: IRON }}>Class B General Building Contractor, continuously licensed and bonded.</p>
               </div>
             </div>
 
@@ -130,7 +130,7 @@ export function ContactPage(): React.JSX.Element {
                   </div>
                   <h3 className="font-display font-extrabold tracking-[-0.03em]" style={{ fontSize: "1.5rem", color: CHARCOAL }}>Request Received</h3>
                   <p className="font-body leading-[1.7]" style={{ fontSize: "1rem", color: IRON, maxWidth: "38ch" }}>
-                    Thank you. Eric will follow up within one business day to schedule a site walkthrough.
+                    Thank you. Our principal builder will follow up within one business day to schedule a site walkthrough.
                   </p>
                 </div>
               ) : (
@@ -138,7 +138,7 @@ export function ContactPage(): React.JSX.Element {
                   <div className="mb-7">
                     <h3 className="font-display font-extrabold tracking-[-0.03em] mb-1" style={{ fontSize: "1.25rem", color: CHARCOAL }}>Project Inquiry Form</h3>
                     <p className="font-body" style={{ fontSize: "0.875rem", color: IRON }}>
-                      Eric reviews each submission personally and responds within one business day.
+                      Our team reviews each submission personally and responds within one business day.
                     </p>
                   </div>
                   <form onSubmit={handleSubmit} className="flex flex-col gap-5">

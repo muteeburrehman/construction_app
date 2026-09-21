@@ -41,7 +41,7 @@ class HealthCheckView(APIView):
             {
                 "status": "healthy",
                 "database": db_status,
-                "service": "eric-sherwood-construction-api",
+                "service": "construction-platform-api",
             },
             status=status.HTTP_200_OK,
         )

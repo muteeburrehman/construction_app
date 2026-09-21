@@ -1,4 +1,4 @@
-"""URL configuration for Eric Sherwood Construction."""
+"""URL configuration for Apex Construction Group."""
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
@@ -15,7 +15,7 @@ def spa_fallback_view(request):
     if index_file.exists():
         return HttpResponse(index_file.read_text(encoding="utf-8"), content_type="text/html; charset=utf-8")
     return HttpResponse(
-        "<h1>Eric Sherwood Construction</h1><p>API is active. Frontend build not found.</p>",
+        "<h1>Apex Construction Group</h1><p>API is active. Frontend build not found.</p>",
         content_type="text/html",
         status=200,
     )

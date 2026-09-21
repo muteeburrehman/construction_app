@@ -1,4 +1,4 @@
-"""Production settings for Eric Sherwood Construction."""
+"""Production settings for Apex Construction Group."""
 
 from .base import *  # noqa: F403
 

@@ -283,7 +283,7 @@ export function TestimonialsView(): React.JSX.Element {
               required
               value={formData.quote}
               onChange={(e) => setFormData({ ...formData, quote: e.target.value })}
-              placeholder="Eric's attention to structural detail and honest communication..."
+              placeholder="The team's attention to structural detail and honest communication..."
               style={{ width: "100%", padding: "8px 12px", borderRadius: 8, border: "1px solid #CBD5E1", fontSize: 13 }}
             />
           </div>

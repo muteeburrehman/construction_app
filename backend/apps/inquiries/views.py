@@ -20,7 +20,7 @@ class InquiryCreateView(generics.CreateAPIView):
         return Response(
             {
                 "success": True,
-                "message": "Thank you for reaching out. Eric Sherwood Construction will be in touch shortly.",
+                "message": "Thank you for reaching out. Apex Construction Group will be in touch shortly.",
                 "inquiry_id": str(inquiry.id),
             },
             status=status.HTTP_201_CREATED,

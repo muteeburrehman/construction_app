@@ -24,7 +24,7 @@ import heroImg from "@/assets/wix/hero_home.jpg"
 import cardRes from "@/assets/wix/card_residential.jpg"
 import cardCom from "@/assets/wix/card_commercial.jpg"
 import cardHome from "@/assets/wix/card_home.jpg"
-import ericFishing from "@/assets/wix/eric_fishing.jpg"
+import builderCraftImg from "@/assets/wix/about-hero.jpg"
 
 const COBALT = "#1A3A6B"
 const BLUE = "#2E5BA8"
@@ -147,10 +147,10 @@ const SERVICES = [
 ]
 
 const STATS = [
-  { value: "45+", label: "Years in Business", sub: "Continuously in Napa Valley" },
-  { value: "1979", label: "Founded in Napa", sub: "Bespoke General Contractor" },
-  { value: "100%", label: "Owner-Supervised", sub: "Eric is on site daily" },
-  { value: "902560", label: "CSLB License", sub: "Class B General Building" },
+  { value: "25+", label: "Years in Business", sub: "Continuously in California" },
+  { value: "1998", label: "Founded", sub: "Premier General Contractor" },
+  { value: "100%", label: "Principal-Supervised", sub: "On site every morning" },
+  { value: "#849201", label: "CSLB License", sub: "Class B General Building" },
 ]
 
 const PILLARS = [
@@ -160,8 +160,8 @@ const PILLARS = [
     icon: ShieldCheck,
   },
   {
-    title: "45 Years of Napa Valley Terroir",
-    desc: "Deep mastery of Napa and Sonoma volcanic soils, steep hillside grading, riparian setbacks, and complex county permitting requirements.",
+    title: "Over Two Decades of Wine Country Mastery",
+    desc: "Deep mastery of California soils, steep hillside grading, riparian setbacks, and complex municipal permitting requirements.",
     icon: Compass,
   },
   {
@@ -182,7 +182,7 @@ const FALLBACK_TESTIMONIALS: HomeTestimonial[] = [
     author: "David & Marcus L.",
     role_or_location: "Estate Owners, Silverado Trail, Yountville",
     quote:
-      "Eric is on site every morning before the sun clears the ridge. His open-book billing meant we knew where every dollar went, and the craftsmanship on our timber framing and stone masonry is unmatched.",
+      "The project team was on site every morning before the sun cleared the ridge. Their transparent billing meant we knew where every dollar went, and the craftsmanship on our timber framing and stone masonry is unmatched.",
     project_title: "Silverado Trail Estate",
   },
   {
@@ -190,7 +190,7 @@ const FALLBACK_TESTIMONIALS: HomeTestimonial[] = [
     author: "Sarah K., Principal Architect",
     role_or_location: "San Francisco & St. Helena Architectural Studio",
     quote:
-      "Working with Eric Sherwood is a true collaboration. He translates delicate architectural details into durable, seismic-rated field reality and solves complex engineering issues before they cause delays.",
+      "Working with Apex Construction Group is a true collaboration. They translate delicate architectural details into durable, seismic-rated field reality and solve complex engineering issues before they cause delays.",
     project_title: "St. Helena Vineyard Residence",
   },
   {
@@ -198,7 +198,7 @@ const FALLBACK_TESTIMONIALS: HomeTestimonial[] = [
     author: "Robert M., Managing Partner",
     role_or_location: "Rutherford Estate Winery",
     quote:
-      "When expanding our tasting room, we couldn't afford downtime during harvest. Eric phased construction flawlessly, delivered on schedule, and the finished millwork routinely receives compliments from our guests.",
+      "When expanding our tasting room, we couldn't afford downtime during harvest. The team phased construction flawlessly, delivered on schedule, and the finished millwork routinely receives compliments from our guests.",
     project_title: "Rutherford Winery Tasting Pavilion",
   },
 ]
@@ -229,7 +229,7 @@ export function HomePage(): React.JSX.Element {
                 location: item.location || "Napa Valley, CA",
                 year: item.year || 2023,
                 scope: item.scope || "Custom Architectural Construction",
-                summary: item.summary || item.description || "Custom architectural build by Eric Sherwood.",
+                summary: item.summary || item.description || "Custom architectural build by Apex Construction Group.",
                 img: item.cover_image?.image || FALLBACK_FEATURED_PROJECTS[idx % FALLBACK_FEATURED_PROJECTS.length].img,
                 is_featured: Boolean(item.is_featured),
                 tags: [item.location || "Napa Valley", item.scope ? item.scope.split(" ").slice(0, 2).join(" ") : "Custom Build"],
@@ -266,9 +266,9 @@ export function HomePage(): React.JSX.Element {
   return (
     <PageShell
       seo={{
-        title: "Eric Sherwood Construction | Napa Valley Custom Builder Since 1979",
+        title: "Apex Construction Group | Custom Residential & Commercial Builders",
         description:
-          "High-end custom residential estates, architectural vineyard homes, and commercial winery facilities in Napa and Sonoma counties. Owner-led construction since 1979. CSLB Lic. 902560.",
+          "High-end custom residential estates, architectural vineyard homes, and commercial facilities in Napa and Sonoma counties. Master general contracting. Licensed & Insured.",
       }}
     >
       {/* ═══════════════════════ HERO SECTION ═══════════════════════ */}
@@ -276,7 +276,7 @@ export function HomePage(): React.JSX.Element {
         {/* Hero Background Image */}
         <img
           src={heroImg}
-          alt="Eric Sherwood Construction — luxury Napa Valley estate"
+          alt="Apex Construction Group — luxury estate construction"
           className="absolute inset-0 w-full h-full object-cover object-center transform scale-105 transition-transform duration-1000"
           fetchPriority="high"
         />
@@ -310,7 +310,7 @@ export function HomePage(): React.JSX.Element {
             <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md shadow-xs mb-8 w-fit">
               <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
               <span className="font-display font-semibold tracking-[0.18em] uppercase text-[11px] text-blue-100">
-                Licensed Napa Valley General Contractor • CSLB #902560
+                Licensed California General Contractor • CSLB #849201
               </span>
             </div>
 
@@ -334,9 +334,9 @@ export function HomePage(): React.JSX.Element {
             <p
               className="font-body leading-[1.75] text-slate-200 mb-10 max-w-2xl text-base sm:text-lg font-light"
             >
-              Forty-five years of custom vineyard residences, steep hillside estates, and commercial winery
-              facilities across Napa and Sonoma counties. No brokers, no administrative layers — Eric Sherwood
-              personally directs your project on site every day.
+              Over twenty-five years of custom vineyard residences, steep hillside estates, and commercial
+              facilities across Northern California. No brokers, no administrative layers — direct
+              master-builder supervision from ground-breaking to completion.
             </p>
 
             {/* CTAs & Direct Contact */}
@@ -359,11 +359,11 @@ export function HomePage(): React.JSX.Element {
               </Link>
 
               <a
-                href="tel:707-255-3875"
+                href="tel:707-555-0192"
                 className="inline-flex items-center gap-2.5 font-display font-semibold text-sm text-slate-300 hover:text-white transition-colors px-4 py-3"
               >
                 <Phone className="w-4 h-4 text-blue-400" />
-                <span>Direct Line: (707) 255-3875</span>
+                <span>Direct Line: (707) 555-0192</span>
               </a>
             </div>
 
@@ -642,7 +642,7 @@ export function HomePage(): React.JSX.Element {
         </Container>
       </section>
 
-      {/* ══════════ THE ERIC SHERWOOD DIFFERENCE (SPLIT SECTION) ══════════ */}
+      {/* ══════════ THE APEX BUILDER DIFFERENCE (SPLIT SECTION) ══════════ */}
       <section className="py-24 sm:py-32" style={{ background: "#F1F5F9" }}>
         <Container size="wide">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -660,8 +660,8 @@ export function HomePage(): React.JSX.Element {
               </h2>
               <p className="font-body text-base text-slate-700 leading-relaxed mb-8 max-w-2xl font-normal">
                 In an era where large construction firms pass your project through estimating departments, sales
-                reps, and junior superintendents, Eric Sherwood operates on an entirely different standard: direct
-                owner supervision from ground-breaking to final occupancy.
+                reps, and junior superintendents, Apex Construction Group operates on an entirely different standard: direct
+                master-builder supervision from ground-breaking to final occupancy.
               </p>
 
               {/* 4 Pillars Grid */}
@@ -692,41 +692,41 @@ export function HomePage(): React.JSX.Element {
                   to="/about"
                   className="group inline-flex items-center gap-2.5 font-display font-bold text-sm px-6 py-3.5 rounded-xl bg-blue-700 text-white hover:bg-blue-800 transition-colors shadow-xs"
                 >
-                  <span>About Eric Sherwood</span>
+                  <span>About Our Craftsmanship</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <a
-                  href="tel:707-255-3875"
+                  href="tel:707-555-0192"
                   className="inline-flex items-center gap-2 font-display font-semibold text-sm px-6 py-3.5 rounded-xl border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 transition-colors"
                 >
                   <Phone className="w-4 h-4 text-blue-600" />
-                  <span>Call 707-255-3875</span>
+                  <span>Call (707) 555-0192</span>
                 </a>
               </div>
             </div>
 
-            {/* Right: Portrait Card */}
+            {/* Right: Craftsmanship Showcase Card */}
             <div className="lg:col-span-5 flex justify-center">
               <div
                 className="relative max-w-sm w-full bg-white rounded-2xl p-4 shadow-xl border border-slate-200"
               >
                 <div className="overflow-hidden rounded-xl bg-slate-100" style={{ aspectRatio: "1 / 1" }}>
                   <img
-                    src={ericFishing}
-                    alt="Eric Sherwood — Owner & Principal General Contractor"
+                    src={builderCraftImg}
+                    alt="Master Craftsman & General Contractor"
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
                 </div>
                 <div className="pt-4 pb-2 text-center">
                   <h4 className="font-display font-black text-lg text-slate-900">
-                    Eric Sherwood
+                    Master Builder Standard
                   </h4>
                   <p className="font-body text-xs text-blue-700 font-semibold mb-1">
-                    Principal Contractor • CSLB Lic. #902560
+                    Licensed & Insured • Lic. #849201
                   </p>
                   <p className="font-body text-xs text-slate-500">
-                    Forty-five continuous years building custom hillside estates and wineries in Napa Valley.
+                    Over twenty-five years of custom hillside estates, precision timber framing, and winery facilities.
                   </p>
                 </div>
 
@@ -734,7 +734,7 @@ export function HomePage(): React.JSX.Element {
                 <div
                   className="absolute -bottom-4 left-1/2 -translate-x-1/2 font-display font-black text-[11px] uppercase tracking-wider px-4 py-1.5 rounded-full shadow-md text-white bg-blue-700 whitespace-nowrap"
                 >
-                  On Site Since 1979
+                  On Site Every Day
                 </div>
               </div>
             </div>
@@ -823,7 +823,7 @@ export function HomePage(): React.JSX.Element {
             <p
               className="font-body text-base text-slate-200 leading-relaxed max-w-xl font-light"
             >
-              We schedule site walkthroughs directly with Eric Sherwood. Bring your architectural drawings,
+              We schedule site walkthroughs directly with our principal builder. Bring your architectural drawings,
               land parcel topographical surveys, or preliminary ideas.
             </p>
 
@@ -837,11 +837,11 @@ export function HomePage(): React.JSX.Element {
               </Link>
 
               <a
-                href="tel:707-255-3875"
+                href="tel:707-555-0192"
                 className="inline-flex items-center gap-2.5 font-display font-semibold text-sm rounded-xl px-7 py-4 border border-white/30 text-white hover:bg-white/10 transition-all"
               >
                 <Phone className="w-4 h-4 text-blue-300" />
-                <span>Call 707-255-3875</span>
+                <span>Call (707) 555-0192</span>
               </a>
             </div>
           </div>

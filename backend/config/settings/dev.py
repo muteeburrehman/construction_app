@@ -1,4 +1,4 @@
-"""Development settings for Eric Sherwood Construction."""
+"""Development settings for Apex Construction Group."""
 
 from .base import *  # noqa: F403
 from .base import INSTALLED_APPS, MIDDLEWARE, REST_FRAMEWORK

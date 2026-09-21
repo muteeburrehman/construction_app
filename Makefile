@@ -1,5 +1,5 @@
 # ==============================================================================
-# Eric Sherwood Construction — Development & Operations Makefile
+# Apex Construction Group — Development & Operations Makefile
 # ==============================================================================
 
 .PHONY: help install dev-backend dev-frontend dev test lint format migrate makemigrations build clean docker-up docker-down prod-pull prod-up

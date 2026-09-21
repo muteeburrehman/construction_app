@@ -1,7 +1,7 @@
-# Deployment Guide — Eric Sherwood Construction
+# Deployment Guide — Apex Construction Group (Platform)
 ## Multi-App Shared VPS Co-existence & Production Deployment
 
-This guide explains how **Eric Sherwood Construction** (`construction_app`) co-exists cleanly on your shared Hetzner VPS alongside **Muteeb Portfolio** (`muteeb-portfolio`) and **Victory Acres** (`victory_acres`), with zero port collisions and minimal server load.
+This guide explains how **Apex Construction Group** (`construction_app`) co-exists cleanly on your shared Hetzner VPS alongside **Muteeb Portfolio** (`muteeb-portfolio`) and **Victory Acres** (`victory_acres`), with zero port collisions and minimal server load.
 
 ---
 
@@ -11,7 +11,7 @@ This guide explains how **Eric Sherwood Construction** (`construction_app`) co-e
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Muteeb Portfolio** | `muteeblabs.com`<br>`n8n.muteeblabs.uk`<br>`breed.muteeblabs.com` | `80:80`<br>`443:443`<br>`5678:5678` (n8n) | `muteeb-portfolio` | `edge`<br>`muteeb-edge` | Dynamic |
 | **Victory Acres** | `victoryacres.muteeblabs.com`<br>`api.victoryacres.muteeblabs.com` | `9080:80`<br>`9443:443` | `victory_acres` | `victory_acres_net` | Hard-isolated |
-| **Eric Sherwood Construction** | `construction.muteeblabs.com` | **`8085:8000`** | `construction_app` | `construction_net` | **350MB (web) + 150MB (db)** |
+| **Apex Construction Group** | `construction.muteeblabs.com` | **`8085:8000`** | `construction_app` | `construction_net` | **350MB (web) + 150MB (db)** |
 
 > [!NOTE]
 > By assigning **`8085`** to Construction App and giving it the project name `construction_app`, its containers, network, volumes, and ports are 100% isolated. It will never collide with Muteeb Portfolio, Victory Acres, or n8n.
@@ -26,7 +26,7 @@ Because `muteeb-caddy` owns ports `80` and `443` on your VPS, you simply route `
 Add this block:
 
 ```caddy
-# ── Eric Sherwood Construction ──────────────────────────────────────────────
+# ── Apex Construction Group ──────────────────────────────────────────────
 construction.muteeblabs.com {
 	encode gzip zstd
 

@@ -105,7 +105,7 @@ export function StyleguidePage(): React.JSX.Element {
     <PageShell
       seo={{
         title: "Design System & Styleguide (Internal)",
-        description: "Design tokens, typography scale, and primitives for Eric Sherwood Construction.",
+        description: "Design tokens, typography scale, and primitives for Apex Construction Group.",
       }}
     >
       {/* Header Band */}
@@ -122,7 +122,7 @@ export function StyleguidePage(): React.JSX.Element {
                 Brand & Design System
               </Display>
               <Lead className="mt-2 text-base sm:text-lg">
-                Eric Sherwood Construction • Napa Valley General Contractor (Est. 1979, CSLB Lic. 902560)
+                Apex Construction Group • California General Contractor (Est. 1998, CSLB Lic. #849201)
               </Lead>
             </div>
             <Button
@@ -240,8 +240,8 @@ export function StyleguidePage(): React.JSX.Element {
               <Grid cols={3} gap="md" className="mt-4">
                 <div className="p-5 border border-stone dark:border-ink-2 bg-bone dark:bg-ink rounded-xs">
                   <span className="text-xs font-display text-slate uppercase">Credential</span>
-                  <div className="font-display font-bold text-lg text-ink dark:text-bone mt-1">CSLB Lic. 902560</div>
-                  <p className="text-xs font-body text-slate mt-2">Class B General Building Contractor in continuous standing since 1979.</p>
+                  <div className="font-display font-bold text-lg text-ink dark:text-bone mt-1">CSLB Lic. #849201</div>
+                  <p className="text-xs font-body text-slate mt-2">Class B General Building Contractor in continuous standing since 1998.</p>
                 </div>
                 <div className="p-5 border border-stone dark:border-ink-2 bg-bone dark:bg-ink rounded-xs">
                   <span className="text-xs font-display text-slate uppercase">Billing Method</span>

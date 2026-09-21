@@ -1,5 +1,5 @@
 # ==============================================================================
-# Eric Sherwood Construction — Caddyfile Configuration
+# Apex Construction Group — Caddyfile Configuration
 # ==============================================================================
 
 {$DOMAIN:localhost} {

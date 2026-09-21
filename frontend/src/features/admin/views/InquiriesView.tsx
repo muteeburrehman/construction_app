@@ -284,7 +284,7 @@ export function InquiriesView(): React.JSX.Element {
                   </a>
                 )}
                 <a
-                  href={`mailto:${selectedInquiry.email}?subject=Eric Sherwood Construction Inquiry`}
+                  href={`mailto:${selectedInquiry.email}?subject=Project Inquiry - Apex Construction Group`}
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
@@ -382,7 +382,7 @@ export function InquiriesView(): React.JSX.Element {
               </span>
               <textarea
                 rows={3}
-                placeholder="Log phone calls, site walks with Eric, architect details, or next steps..."
+                placeholder="Log phone calls, site walks with client, architect details, or next steps..."
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
                 style={{

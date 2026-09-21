@@ -1,5 +1,5 @@
 # ==============================================================================
-# Multi-stage Dockerfile — Eric Sherwood Construction
+# Multi-stage Dockerfile — Apex Construction Group
 # Stage 1: Build Frontend SPA
 # Stage 2: Python 3.12 Slim Runtime
 # ==============================================================================

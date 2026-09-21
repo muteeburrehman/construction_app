@@ -128,14 +128,14 @@ export function AdminLayout(): React.JSX.Element {
                   letterSpacing: "-0.05em",
                 }}
               >
-                ES
+                A
               </div>
               <div>
                 <h1 style={{ fontSize: 14, fontWeight: 700, letterSpacing: "-0.02em", margin: 0, color: "#FFFFFF" }}>
-                  Eric Sherwood
+                  Apex Construction
                 </h1>
                 <p style={{ fontSize: 11, color: "#94A3B8", margin: 0, letterSpacing: "0.04em", textTransform: "uppercase" }}>
-                  Construction Admin
+                  Executive Portal
                 </p>
               </div>
             </div>

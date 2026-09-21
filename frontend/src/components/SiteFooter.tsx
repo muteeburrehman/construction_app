@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { Phone, Mail, MapPin, ArrowRight } from "lucide-react"
 import { Container } from "@/components/ui/layout"
-import logoSq from "@/assets/wix/logo_square.jpg"
 
 const COBALT   = "#1A3A6B"
 const BLUE     = "#2E5BA8"
@@ -73,13 +72,13 @@ interface SiteSettingsData {
 }
 
 const DEFAULT_SETTINGS: SiteSettingsData = {
-  company_name: "Eric Sherwood Construction",
-  phone: "707-255-3875",
-  email: "eric@ericsherwoodconstruction.com",
-  license_number: "CSLB Lic. 902560",
-  youtube_url: "https://www.youtube.com/watch?v=wQC4ON6EzLg",
-  linkedin_url: "https://www.linkedin.com/company/eric-sherwood-construction/",
-  facebook_url: "https://www.facebook.com/ericsherwoodconstruction/",
+  company_name: "Apex Construction Group",
+  phone: "(707) 555-0192",
+  email: "contact@construction.muteeblabs.com",
+  license_number: "Licensed, Bonded & Insured (Lic. #849201)",
+  youtube_url: "",
+  linkedin_url: "",
+  facebook_url: "",
 }
 
 export function SiteFooter(): React.JSX.Element {
@@ -144,25 +143,25 @@ export function SiteFooter(): React.JSX.Element {
 
           {/* Brand Column */}
           <div>
-            <Link to="/" className="inline-flex items-center gap-3 mb-6" aria-label="Eric Sherwood Construction — Home">
-              <img
-                src={logoSq}
-                alt=""
-                className="h-10 w-10 rounded-sm object-cover"
-                style={{ border: "1px solid rgba(248,249,252,0.12)" }}
-              />
+            <Link to="/" className="inline-flex items-center gap-3 mb-6" aria-label="Apex Construction Group — Home">
+              <div
+                className="h-10 w-10 rounded-sm flex items-center justify-center font-display font-extrabold text-white text-base tracking-tight shadow-sm"
+                style={{ background: `linear-gradient(135deg, ${CHARCOAL} 0%, #111622 100%)`, border: "1px solid rgba(248,249,252,0.18)" }}
+              >
+                A
+              </div>
               <div className="flex flex-col leading-none">
                 <span
                   className="font-display font-extrabold tracking-[-0.03em] uppercase"
                   style={{ fontSize: "0.9375rem", color: "#F8F9FC" }}
                 >
-                  Eric Sherwood
+                  {settings.company_name}
                 </span>
                 <span
                   className="font-display font-semibold tracking-[0.06em] uppercase mt-0.5"
                   style={{ fontSize: "0.5625rem", color: "rgba(248,249,252,0.30)" }}
                 >
-                  Construction
+                  Custom Estate & Commercial Builders
                 </span>
               </div>
             </Link>
@@ -171,8 +170,7 @@ export function SiteFooter(): React.JSX.Element {
               className="font-body leading-relaxed mb-6"
               style={{ fontSize: "0.9375rem", color: "rgba(248,249,252,0.42)", maxWidth: "30ch" }}
             >
-              Napa Valley's premier custom general contractor since 1979.
-              Owner-led, on site every morning.
+              Premier custom residential and commercial general contractors. Master craftsmanship and transparent accountability on every project.
             </p>
 
             {/* Direct Contact Details */}
@@ -221,7 +219,7 @@ export function SiteFooter(): React.JSX.Element {
                     href={settings.youtube_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Eric Sherwood Construction on YouTube"
+                    aria-label={`${settings.company_name} on YouTube`}
                     className="transition-transform hover:scale-105"
                     title="YouTube"
                   >
@@ -233,7 +231,7 @@ export function SiteFooter(): React.JSX.Element {
                     href={settings.linkedin_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Eric Sherwood Construction on LinkedIn"
+                    aria-label={`${settings.company_name} on LinkedIn`}
                     className="transition-transform hover:scale-105"
                     title="LinkedIn"
                   >
@@ -245,7 +243,7 @@ export function SiteFooter(): React.JSX.Element {
                     href={settings.facebook_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Eric Sherwood Construction on Facebook"
+                    aria-label={`${settings.company_name} on Facebook`}
                     className="transition-transform hover:scale-105"
                     title="Facebook"
                   >
@@ -290,9 +288,14 @@ export function SiteFooter(): React.JSX.Element {
           style={{ borderTop: "1px solid rgba(248,249,252,0.07)" }}
         >
           <div className="flex items-center gap-3">
-            <img src={logoSq} alt="Sherwood Construction" className="w-6 h-6 rounded-sm object-cover opacity-60" />
+            <div
+              className="w-6 h-6 rounded-sm flex items-center justify-center font-display font-black text-xs text-white opacity-70"
+              style={{ background: "#111622", border: "1px solid rgba(248,249,252,0.2)" }}
+            >
+              A
+            </div>
             <p className="text-xs font-display" style={{ color: "rgba(248,249,252,0.40)" }}>
-              © {new Date().getFullYear()}, Sherwood Inc. / Eric Sherwood Construction.
+              © {new Date().getFullYear()}, {settings.company_name || "Apex Construction Group"}. All rights reserved.
             </p>
           </div>
           <div className="flex items-center gap-6">

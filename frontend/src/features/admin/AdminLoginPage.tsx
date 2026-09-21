@@ -76,7 +76,7 @@ export function AdminLoginPage(): React.JSX.Element {
             <ShieldCheck size={28} />
           </div>
           <h1 style={{ fontSize: 22, fontWeight: 800, color: "#0F172A", margin: 0, letterSpacing: "-0.02em" }}>
-            Eric Sherwood Construction
+            Apex Construction Group
           </h1>
           <p style={{ fontSize: 13, color: "#64748B", marginTop: 6 }}>
             Sign in to access the administrative control suite

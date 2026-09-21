@@ -169,10 +169,10 @@ class TestContentEndpoints:
 
     def test_site_settings_cached_queries(self, django_assert_num_queries):
         SiteSettings.objects.create(
-            company_name="Eric Sherwood Construction",
-            phone="707-255-3875",
-            email="eric@ericsherwoodconstruction.com",
-            license_number="CSLB Lic. 902560",
+            company_name="Apex Construction Group",
+            phone="707-555-0192",
+            email="contact@construction.muteeblabs.com",
+            license_number="Licensed & Insured (Lic. #849201)",
         )
 
         # First hit: 1 query to fetch row and populate cache
@@ -184,4 +184,4 @@ class TestContentEndpoints:
         with django_assert_num_queries(0):
             response2 = self.client.get("/api/v1/site-settings/")
         assert response2.status_code == 200
-        assert response2.json()["license_number"] == "CSLB Lic. 902560"
+        assert response2.json()["license_number"] == "Licensed & Insured (Lic. #849201)"

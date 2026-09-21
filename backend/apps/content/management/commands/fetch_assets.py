@@ -76,5 +76,5 @@ class Command(BaseCommand):
         img = Image.new("RGB", (1200, 800), color="#1C231C")
         draw = ImageDraw.Draw(img)
         draw.rectangle([20, 20, 1180, 780], outline="#6B2231", width=4)
-        draw.text((600, 400), "Eric Sherwood Construction", fill="#EFEBE2", anchor="mm")
+        draw.text((600, 400), "Apex Construction Group", fill="#EFEBE2", anchor="mm")
         img.save(path)

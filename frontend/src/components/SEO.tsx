@@ -10,21 +10,21 @@ export interface SEOProps {
 }
 
 const DEFAULT_TITLE =
-  "Eric Sherwood Construction | Napa Valley Custom General Contractor Since 1979"
+  "Apex Construction Group | Custom Luxury General Contractor"
 const DEFAULT_DESCRIPTION =
-  "High-end custom residential and commercial general contractor in Napa, California. In business since 1979. CSLB Lic. 902560. Call 707-255-3875."
-const SITE_URL = "https://www.ericsherwoodconstruction.com"
+  "High-end custom residential and commercial general contractor. Uncompromising craftsmanship and on-site principal supervision. Call (707) 555-0192."
+const SITE_URL = "https://construction.muteeblabs.com"
 
 export function SEO({
   title,
   description = DEFAULT_DESCRIPTION,
   canonical,
   ogType = "website",
-  ogImage = "https://static.wixstatic.com/media/d251b1_1efb0c862f974f3fb3f7ee4319f1517b~mv2_d_4032_3024_s_4_2.jpg",
+  ogImage = "/static/img/hero_residential.jpg",
 }: SEOProps): null {
   const location = useLocation()
   const fullTitle = title
-    ? `${title} | Eric Sherwood Construction`
+    ? (title.includes("Apex Construction Group") ? title : `${title} | Apex Construction Group`)
     : DEFAULT_TITLE
   const currentCanonical = canonical || `${SITE_URL}${location.pathname}`
 
@@ -53,7 +53,7 @@ export function SEO({
     setMeta("property", "og:type", ogType)
     setMeta("property", "og:url", currentCanonical)
     setMeta("property", "og:image", ogImage)
-    setMeta("property", "og:site_name", "Eric Sherwood Construction")
+    setMeta("property", "og:site_name", "Apex Construction Group")
 
     // 4. Twitter Cards
     setMeta("name", "twitter:card", "summary_large_image")

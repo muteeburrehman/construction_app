@@ -12,18 +12,18 @@ class SiteSettings(BaseModel):
 
     company_name = models.CharField(
         max_length=150,
-        default="Eric Sherwood Construction",
+        default="Apex Construction Group",
         help_text="Legal business entity name",
     )
     tagline = models.CharField(
         max_length=255,
-        default="Building in the Napa Valley since 1979",
+        default="Premier Custom Residential & Commercial Builders",
         help_text="Brand headline",
     )
-    phone = models.CharField(max_length=30, default="707-255-3875")
-    email = models.EmailField(default="eric@ericsherwoodconstruction.com")
-    license_number = models.CharField(max_length=50, default="CSLB Lic. 902560")
-    founding_year = models.PositiveIntegerField(default=1979)
+    phone = models.CharField(max_length=30, default="707-555-0192")
+    email = models.EmailField(default="contact@construction.muteeblabs.com")
+    license_number = models.CharField(max_length=50, default="Licensed & Insured (Lic. #849201)")
+    founding_year = models.PositiveIntegerField(default=1998)
 
     # Address
     street_address = models.CharField(max_length=200, blank=True, default="")
@@ -43,15 +43,15 @@ class SiteSettings(BaseModel):
     # Socials
     linkedin_url = models.URLField(
         blank=True,
-        default="https://www.linkedin.com/company/eric-sherwood-construction/",
+        default="",
     )
     facebook_url = models.URLField(
         blank=True,
-        default="https://www.facebook.com/ericsherwoodconstruction/",
+        default="",
     )
     youtube_url = models.URLField(
         blank=True,
-        default="https://www.youtube.com/watch?v=wQC4ON6EzLg",
+        default="",
     )
 
     class Meta(BaseModel.Meta):

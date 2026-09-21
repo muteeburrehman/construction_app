@@ -10,4 +10,4 @@ def test_health_check_endpoint():
     data = response.json()
     assert data["status"] == "healthy"
     assert data["database"] == "connected"
-    assert data["service"] == "eric-sherwood-construction-api"
+    assert data["service"] == "construction-platform-api"

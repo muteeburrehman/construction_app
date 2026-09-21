@@ -10,7 +10,7 @@ export function NotFoundPage(): React.JSX.Element {
   return (
     <PageShell
       seo={{
-        title: "Page Not Found | Eric Sherwood Construction",
+        title: "Page Not Found | Apex Construction Group",
         description: "The page you requested could not be found.",
       }}
     >
@@ -27,7 +27,7 @@ export function NotFoundPage(): React.JSX.Element {
               The page you are looking for has been moved, renamed, or does not exist.
             </Lead>
             <Prose className="mx-auto text-sm text-slate dark:text-stone/70">
-              If you followed a link from the former website, use the navigation above to explore our updated residential, commercial, and portfolio sections.
+              Use the navigation above to explore our custom residential, commercial, and portfolio sections.
             </Prose>
             <div className="pt-6 flex justify-center gap-4">
               <Button asChild variant="default">
@@ -37,7 +37,7 @@ export function NotFoundPage(): React.JSX.Element {
                 </Link>
               </Button>
               <Button asChild variant="outline">
-                <Link to="/contact">Contact Eric</Link>
+                <Link to="/contact">Contact Us</Link>
               </Button>
             </div>
           </div>

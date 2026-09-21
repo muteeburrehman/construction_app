@@ -1,6 +1,6 @@
-# Eric Sherwood Construction — Web Application (Demo v1)
+# Apex Construction Group — Turnkey Luxury Web Application
 
-A production-quality web application and marketing platform for **Eric Sherwood Construction**, high-end custom residential and commercial general contractor in Napa, California. In continuous business since 1979 (CSLB Lic. 902560).
+A production-quality web application and marketing platform for **Apex Construction Group**, high-end custom residential and commercial general contractor. In continuous business since 1998 (CSLB Lic. #849201). Features turnkey dynamic re-branding via the `/admin` executive portal.
 
 ---
 
@@ -73,7 +73,7 @@ Designed for a multi-decade Napa Valley builder: built, not decorated. Stone, st
 ## 4. Architecture & VPS Deployment (Zero-Build-Overhead)
 
 To avoid high CPU and RAM usage spikes on shared servers hosting other applications:
-- **Build Off-Server**: Build Docker images locally or via GitHub Actions CI and push to Docker Hub / GHCR (`ghcr.io/user/sherwood-web:latest`).
+- **Build Off-Server**: Build Docker images locally or via GitHub Actions CI and push to Docker Hub (`muteebu007/construction-app:latest`).
 - **Server Only Pulls**: The production server only runs:
   ```bash
   docker compose -f docker-compose.prod.yml pull

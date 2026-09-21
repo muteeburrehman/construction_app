@@ -201,7 +201,7 @@ export function WorkPage(): React.JSX.Element {
               location: item.location || "Napa Valley, CA",
               year: item.year || 2023,
               scope: item.scope || "Custom Construction",
-              summary: item.summary || item.description || "Custom architectural construction by Eric Sherwood.",
+              summary: item.summary || item.description || "Custom architectural construction by Apex Construction Group.",
               body: item.body,
               is_featured: Boolean(item.is_featured),
               cover_image: item.cover_image,
@@ -297,9 +297,9 @@ export function WorkPage(): React.JSX.Element {
   return (
     <PageShell
       seo={{
-        title: "Selected Work & Portfolio | Eric Sherwood Construction",
+        title: "Selected Work & Portfolio | Apex Construction Group",
         description:
-          "Explore custom residential estates, architectural vineyard renovations, and commercial winery facilities built across Napa and Sonoma counties since 1979.",
+          "Explore custom residential estates, architectural vineyard renovations, and commercial winery facilities built across Napa Valley and Northern California.",
       }}
     >
       {/* ─── Hero / Header Section ─── */}
@@ -352,7 +352,7 @@ export function WorkPage(): React.JSX.Element {
                   style={{ fontSize: "1.125rem", color: SLATE, maxWidth: "56ch" }}
                 >
                   Custom homes, vineyard estates, and commercial winery facilities built across Napa Valley
-                  since 1979. Every project is owner-supervised by Eric Sherwood with direct craftsman accountability.
+                  and Northern California. Every project is executed with direct craftsman accountability and principal on-site supervision.
                 </p>
               </div>
 
@@ -648,7 +648,7 @@ export function WorkPage(): React.JSX.Element {
             <div className="relative z-10 max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-[11px] font-display font-semibold tracking-wider uppercase mb-5 border border-white/15">
                 <Sparkles className="w-3.5 h-3.5 text-blue-300" />
-                The Eric Sherwood Standard
+                The Master Builder Standard
               </div>
 
               <h2
@@ -661,7 +661,7 @@ export function WorkPage(): React.JSX.Element {
               <p
                 className="font-body text-sm sm:text-base leading-[1.75] text-slate-300 mb-8 max-w-2xl"
               >
-                We limit our project roster each season so that Eric Sherwood directly oversees site engineering,
+                We limit our project roster each season so that our principal builders directly oversee site engineering,
                 subcontractor craft, and finish detail. No sales layers or junior superintendents.
               </p>
 
@@ -675,11 +675,11 @@ export function WorkPage(): React.JSX.Element {
                 </Link>
 
                 <a
-                  href="tel:707-255-3875"
+                  href="tel:707-555-0192"
                   className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-display font-semibold text-sm text-white border border-white/25 hover:border-white/60 hover:bg-white/5 transition-all"
                 >
                   <Phone className="w-4 h-4 text-blue-300" />
-                  <span>Call 707-255-3875</span>
+                  <span>Call (707) 555-0192</span>
                 </a>
               </div>
             </div>
@@ -791,7 +791,7 @@ export function WorkPage(): React.JSX.Element {
                   </p>
                   <p className="font-body text-slate-600">
                     {modalDetails?.body || selectedProject.body || (
-                      "Executed under direct field supervision by Eric Sherwood. Foundation engineering, seismic and hillside structural design, high-end millwork installations, and strict adherence to Napa County WUI building standards."
+                      "Executed under direct field supervision by Apex Construction Group. Foundation engineering, seismic and hillside structural design, high-end millwork installations, and strict adherence to California building standards."
                     )}
                   </p>
                 </div>
@@ -819,7 +819,7 @@ export function WorkPage(): React.JSX.Element {
                       Builder
                     </div>
                     <div className="text-xs font-bold text-slate-800 font-display mt-0.5">
-                      Eric Sherwood
+                      Apex Construction Group
                     </div>
                   </div>
                   <div>
@@ -849,11 +849,11 @@ export function WorkPage(): React.JSX.Element {
                     </Link>
 
                     <a
-                      href="tel:707-255-3875"
-                      className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50 font-display font-semibold text-xs transition-colors"
+                      href="tel:707-555-0192"
+                      className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 font-display font-semibold text-xs transition-colors"
                     >
-                      <Phone className="w-3.5 h-3.5 text-slate-500" />
-                      <span>707-255-3875</span>
+                      <Phone className="w-3.5 h-3.5 text-blue-600" />
+                      <span>(707) 555-0192</span>
                     </a>
                   </div>
                 </div>

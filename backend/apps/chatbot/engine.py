@@ -79,10 +79,11 @@ def query_chatbot(user_message: str, session_id: str = "") -> dict[str, Any]:
 
     # License intent
     if any(word in tokens for word in ["license", "cslb", "insured", "insurance", "bond", "bonded"]):
+        company = settings.company_name or "Apex Construction Group"
         response_text = (
-            f"Eric Sherwood Construction is fully licensed, bonded, and insured in California. "
-            f"Our California Contractors State License Board (CSLB) License number is #{settings.license_number or '902560'}. "
-            f"We have maintained an impeccable standing in Napa Valley for over four decades."
+            f"{company} is fully licensed, bonded, and insured in California. "
+            f"Our California Contractors State License Board (CSLB) License number is #{settings.license_number or '849201'}. "
+            f"We maintain an impeccable standing with premier residential and commercial builds across the region."
         )
         _log_chat(session_id, user_message, response_text, ChatLog.SOURCE_SETTINGS, "intent:license")
         return {
@@ -93,10 +94,10 @@ def query_chatbot(user_message: str, session_id: str = "") -> dict[str, Any]:
 
     # Phone / Contact intent
     if any(word in tokens for word in ["phone", "call", "contact", "email", "reach", "number", "talk"]):
-        phone = settings.phone or "(707) 255-3875"
-        email = settings.email or "eric@ericsherwoodconstruction.com"
+        phone = settings.phone or "(707) 555-0192"
+        email = settings.email or "contact@construction.muteeblabs.com"
         response_text = (
-            f"You can reach Eric Sherwood directly at {phone} or via email at {email}. "
+            f"You can reach our team and project leads directly at {phone} or via email at {email}. "
             f"We also welcome project inquiries through our online estimate request form."
         )
         _log_chat(session_id, user_message, response_text, ChatLog.SOURCE_SETTINGS, "intent:contact")
@@ -111,7 +112,7 @@ def query_chatbot(user_message: str, session_id: str = "") -> dict[str, Any]:
         response_text = (
             "We operate on an open-book, cost-plus construction management basis. Every subcontractor bid, "
             "material invoice, and labor ledger is completely transparent with no hidden markups. "
-            "Because every custom residential build or commercial estate in Napa Valley has distinct architectural specifications, "
+            "Because every custom residential build or commercial estate has distinct architectural specifications, "
             "we provide detailed cost projections during pre-construction after reviewing your initial plans."
         )
         _log_chat(session_id, user_message, response_text, ChatLog.SOURCE_SETTINGS, "intent:pricing")
@@ -123,17 +124,18 @@ def query_chatbot(user_message: str, session_id: str = "") -> dict[str, Any]:
 
     # Location / Service Area intent
     if any(word in tokens for word in ["location", "area", "where", "napa", "sonoma", "yountville", "helena", "calistoga", "address"]):
+        company = settings.company_name or "Apex Construction Group"
         service_areas = settings.service_area or "Napa, St. Helena, Yountville, Calistoga, Oakville, and Sonoma County"
         response_text = (
-            f"Eric Sherwood Construction is based in Napa, California. We build and remodel throughout "
-            f"the wine country, including {service_areas}. Our 40+ years of deep relationships with local planning "
-            f"departments and premier craftsmen ensures a seamless permitting and building process."
+            f"{company} is based in Napa, California. We build and remodel throughout "
+            f"the wine country and surrounding regions, including {service_areas}. Our deep relationships with local planning "
+            f"departments and master craftsmen ensure a seamless permitting and building process."
         )
         _log_chat(session_id, user_message, response_text, ChatLog.SOURCE_SETTINGS, "intent:location")
         return {
             "source": "settings",
             "message": response_text,
-            "action": {"type": "route", "label": "View Our Work in Napa Valley", "route": "/work"},
+            "action": {"type": "route", "label": "View Our Work", "route": "/work"},
         }
 
     # 3. Search Portfolio Projects in Database
@@ -198,10 +200,10 @@ def query_chatbot(user_message: str, session_id: str = "") -> dict[str, Any]:
             }
 
     # 5. Graceful Fallback
-    phone = settings.phone or "(707) 255-3875"
+    phone = settings.phone or "(707) 555-0192"
     response_text = (
-        f"Thank you for your question! For specific architectural plans, site evaluations, or custom inquiries, "
-        f"Eric Sherwood would be delighted to speak with you directly. You can call Eric at {phone}, or send a "
+        f"Thank you for your question! For specific architectural plans, site evaluations, or custom project inquiries, "
+        f"our principal builders would be delighted to speak with you directly. You can call us at {phone}, or send a "
         f"brief message through our project inquiry form."
     )
     _log_chat(session_id, user_message, response_text, ChatLog.SOURCE_FALLBACK)

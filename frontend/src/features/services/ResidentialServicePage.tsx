@@ -28,13 +28,13 @@ export function ResidentialServicePage(): React.JSX.Element {
   return (
     <PageShell
       seo={{
-        title: "Custom Residential Construction Napa | Eric Sherwood Construction",
-        description: "Custom luxury home construction, historic vineyard estate remodels, and architectural additions in Napa and Sonoma counties. CSLB Lic. 902560.",
+        title: "Custom Residential Construction | Apex Construction Group",
+        description: "Custom luxury home construction, historic estate remodels, and architectural additions. California Class B Contractor Lic. #849201.",
       }}
     >
       {/* ── Hero ── */}
       <section className="relative w-full overflow-hidden" style={{ minHeight: 520 }}>
-        <img src={heroImg} alt="Custom Napa Valley residence by Eric Sherwood" className="absolute inset-0 w-full h-full object-cover object-center" fetchPriority="high" />
+        <img src={heroImg} alt="Custom luxury residence by Apex Construction Group" className="absolute inset-0 w-full h-full object-cover object-center" fetchPriority="high" />
         <div className="absolute inset-0" style={{ background: "linear-gradient(110deg, rgba(14,20,32,0.90) 45%, rgba(14,20,32,0.50) 100%)" }} />
         <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: BLUE }} />
 
@@ -50,7 +50,7 @@ export function ResidentialServicePage(): React.JSX.Element {
             </h1>
             <p className="font-body leading-[1.7] mb-10" style={{ fontSize: "1.0625rem", color: "rgba(248,249,252,0.55)", maxWidth: "50ch" }}>
               Ground-up residences, historic estate rehabilitations, and architectural additions managed
-              with open-book transparency on Napa Valley's most demanding terrain.
+              with open-book transparency on California's most demanding terrain.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/contact" className="group inline-flex items-center gap-2 font-display font-semibold rounded-sm px-7 py-4 transition-colors duration-200" style={{ background: BLUE, color: WHITE, fontSize: "0.9375rem" }}
@@ -58,10 +58,10 @@ export function ResidentialServicePage(): React.JSX.Element {
                 onMouseLeave={e => (e.currentTarget.style.background = BLUE)}>
                 Discuss your project <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
               </Link>
-              <a href="tel:707-255-3875" className="inline-flex items-center gap-2 font-display font-semibold rounded-sm px-7 py-4 transition-colors duration-200" style={{ border: "1px solid rgba(248,249,252,0.22)", color: "rgba(248,249,252,0.72)", fontSize: "0.9375rem" }}
+              <a href="tel:707-555-0192" className="inline-flex items-center gap-2 font-display font-semibold rounded-sm px-7 py-4 transition-colors duration-200" style={{ border: "1px solid rgba(248,249,252,0.22)", color: "rgba(248,249,252,0.72)", fontSize: "0.9375rem" }}
                 onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(248,249,252,0.48)"; e.currentTarget.style.color = CLOUD }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(248,249,252,0.22)"; e.currentTarget.style.color = "rgba(248,249,252,0.72)" }}>
-                <Phone style={{ width: 15, height: 15 }} /> 707-255-3875
+                <Phone style={{ width: 15, height: 15 }} /> (707) 555-0192
               </a>
             </div>
           </div>
@@ -75,15 +75,15 @@ export function ResidentialServicePage(): React.JSX.Element {
             <div>
               <div className="h-[2px] w-10 mb-6" style={{ background: BLUE }} />
               <h2 className="font-display font-extrabold tracking-[-0.04em] leading-[1.1] mb-6" style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: CHARCOAL }}>
-                Terrain-ready. Owner-led.
+                Terrain-ready. Principal-led.
               </h2>
               <p className="font-body leading-[1.75] mb-5" style={{ fontSize: "1.0625rem", color: SLATE, maxWidth: "58ch" }}>
                 We specialize in custom residential projects where difficult site topography, high fire-hazard severity zones,
                 and exacting architectural millwork require seasoned craftsmanship.
               </p>
               <p className="font-body leading-[1.75] mb-10" style={{ fontSize: "1.0625rem", color: SLATE, maxWidth: "58ch" }}>
-                Eric is on site daily. You will not be handed off to a junior project manager six weeks in.
-                Our open-book time-and-materials model means you see exactly where every dollar goes.
+                Our principal builders are on site daily. You will not be handed off to a junior project manager six weeks in.
+                Our open-book construction management model means you see exactly where every dollar goes.
               </p>
               <div className="h-[2px] w-10 mb-6" style={{ background: PEBBLE }} />
               <h3 className="font-display font-semibold tracking-[-0.025em] mb-5" style={{ fontSize: "1.125rem", color: CHARCOAL }}>What we handle</h3>
@@ -102,10 +102,10 @@ export function ResidentialServicePage(): React.JSX.Element {
                 <img src={cardImg} alt="Residential project — Napa Valley" className="w-full object-cover" style={{ height: 280 }} loading="lazy" />
               </div>
               <div className="p-8 rounded-sm" style={{ background: CLOUD, border: `1px solid ${PEBBLE}` }}>
-                <p className="font-display font-semibold tracking-[0.1em] uppercase mb-3" style={{ fontSize: "0.6rem", color: IRON }}>CSLB Lic. 902560</p>
+                <p className="font-display font-semibold tracking-[0.1em] uppercase mb-3" style={{ fontSize: "0.6rem", color: IRON }}>CSLB Lic. #849201</p>
                 <h3 className="font-display font-extrabold tracking-[-0.025em] mb-3" style={{ fontSize: "1.1875rem", color: CHARCOAL }}>Ready to discuss your build?</h3>
                 <p className="font-body leading-relaxed mb-6" style={{ fontSize: "0.9375rem", color: IRON }}>
-                  Initial walkthroughs are with Eric directly. No sales calls, no intermediaries.
+                  Initial walkthroughs are with our principal builders directly. No sales calls, no intermediaries.
                 </p>
                 <Link to="/contact" className="group flex items-center justify-center gap-2 w-full font-display font-semibold rounded-sm py-3.5 transition-colors duration-200" style={{ background: BLUE, color: WHITE, fontSize: "0.875rem" }}
                   onMouseEnter={e => (e.currentTarget.style.background = COBALT)}

@@ -1,4 +1,4 @@
-"""Base settings for Eric Sherwood Construction project."""
+"""Base settings for Apex Construction Group project."""
 
 from datetime import timedelta
 from pathlib import Path
@@ -180,8 +180,8 @@ SIMPLE_JWT = {
 
 # DRF Spectacular OpenAPI
 SPECTACULAR_SETTINGS = {
-    "TITLE": "Eric Sherwood Construction API",
-    "DESCRIPTION": "API for Eric Sherwood Construction public marketing web application.",
+    "TITLE": "Apex Construction Group API",
+    "DESCRIPTION": "API for Apex Construction Group public marketing web application.",
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
 }

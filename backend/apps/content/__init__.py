@@ -1,1 +1,1 @@
-"""Content app for Eric Sherwood Construction."""
+"""Content app for Apex Construction Group."""

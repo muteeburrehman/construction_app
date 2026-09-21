@@ -28,8 +28,8 @@ export function CommercialServicePage(): React.JSX.Element {
   return (
     <PageShell
       seo={{
-        title: "Commercial & Winery Construction Napa | Eric Sherwood Construction",
-        description: "Commercial building, winery hospitality spaces, and light industrial facilities in Napa Valley since 1979. CSLB Lic. 902560.",
+        title: "Commercial & Hospitality Construction | Apex Construction Group",
+        description: "Commercial building, winery hospitality spaces, and specialized architectural facilities. CSLB Lic. #849201.",
       }}
     >
       {/* ── Hero ── */}
@@ -58,10 +58,10 @@ export function CommercialServicePage(): React.JSX.Element {
                 onMouseLeave={e => (e.currentTarget.style.background = BLUE)}>
                 Request commercial consultation <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
               </Link>
-              <a href="tel:707-255-3875" className="inline-flex items-center gap-2 font-display font-semibold rounded-sm px-7 py-4 transition-colors duration-200" style={{ border: "1px solid rgba(248,249,252,0.22)", color: "rgba(248,249,252,0.72)", fontSize: "0.9375rem" }}
+              <a href="tel:707-555-0192" className="inline-flex items-center gap-2 font-display font-semibold rounded-sm px-7 py-4 transition-colors duration-200" style={{ border: "1px solid rgba(248,249,252,0.22)", color: "rgba(248,249,252,0.72)", fontSize: "0.9375rem" }}
                 onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(248,249,252,0.48)"; e.currentTarget.style.color = CLOUD }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(248,249,252,0.22)"; e.currentTarget.style.color = "rgba(248,249,252,0.72)" }}>
-                <Phone style={{ width: 15, height: 15 }} /> 707-255-3875
+                <Phone style={{ width: 15, height: 15 }} /> (707) 555-0192
               </a>
             </div>
           </div>
@@ -79,8 +79,8 @@ export function CommercialServicePage(): React.JSX.Element {
               </h2>
               <p className="font-body leading-[1.75] mb-5" style={{ fontSize: "1.0625rem", color: SLATE, maxWidth: "58ch" }}>
                 Our commercial division coordinates structural steel, commercial code compliance, and custom architectural finishes
-                while keeping production and hospitality operations running smoothly. Notable projects include the Ellman Family
-                Vineyards tasting room renovation and the CAMi Art and Wine Gallery in Calistoga.
+                while keeping production and hospitality operations running smoothly. Notable projects include tasting room renovations
+                and premier gallery and retail build-outs.
               </p>
               <p className="font-body leading-[1.75] mb-10" style={{ fontSize: "1.0625rem", color: SLATE, maxWidth: "58ch" }}>
                 We understand that winery and commercial clients can't afford production downtime. Our phased-build approach
@@ -103,7 +103,7 @@ export function CommercialServicePage(): React.JSX.Element {
                 <img src={cardImg} alt="Commercial winery — Napa Valley" className="w-full object-cover" style={{ height: 280 }} loading="lazy" />
               </div>
               <div className="p-8 rounded-sm" style={{ background: CLOUD, border: `1px solid ${PEBBLE}` }}>
-                <p className="font-display font-semibold tracking-[0.1em] uppercase mb-3" style={{ fontSize: "0.6rem", color: IRON }}>CSLB Lic. 902560</p>
+                <p className="font-display font-semibold tracking-[0.1em] uppercase mb-3" style={{ fontSize: "0.6rem", color: IRON }}>CSLB Lic. #849201</p>
                 <h3 className="font-display font-extrabold tracking-[-0.025em] mb-3" style={{ fontSize: "1.1875rem", color: CHARCOAL }}>Planning a commercial project?</h3>
                 <p className="font-body leading-relaxed mb-6" style={{ fontSize: "0.9375rem", color: IRON }}>
                   We walk you through scope, phasing, and open-book pricing before any work begins.

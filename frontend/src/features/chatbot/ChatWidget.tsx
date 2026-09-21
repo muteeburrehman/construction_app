@@ -63,7 +63,7 @@ export function ChatWidget(): React.JSX.Element {
         {
           id: "welcome",
           sender: "bot",
-          text: "Welcome to Eric Sherwood Construction. I am your direct assistant, connected directly to our project records, services catalog, and company knowledge base. How can I assist you with your project today?",
+          text: "Welcome to Apex Construction Group. I am your direct assistant, connected to our project records, services catalog, and company knowledge base. How can I assist you with your project today?",
         },
       ])
     }
@@ -99,7 +99,7 @@ export function ChatWidget(): React.JSX.Element {
       const botMsg: Message = {
         id: "bot_" + Date.now(),
         sender: "bot",
-        text: data.message || "Thank you. Please reach out directly to Eric at (707) 255-3875.",
+        text: data.message || "Thank you. Please reach out directly to our team at (707) 555-0192.",
         action: data.action,
       }
 
@@ -110,7 +110,7 @@ export function ChatWidget(): React.JSX.Element {
         {
           id: "bot_err_" + Date.now(),
           sender: "bot",
-          text: "We are pleased to speak with you directly. Please contact Eric Sherwood at (707) 255-3875 or submit your project on our estimate request page.",
+          text: "We are pleased to speak with you directly. Please contact our team at (707) 555-0192 or submit your project on our estimate request page.",
           action: { type: "route", label: "Request an Estimate", route: "/contact" },
         },
       ])
@@ -176,11 +176,11 @@ export function ChatWidget(): React.JSX.Element {
                   fontSize: 14,
                 }}
               >
-                ES
+                A
               </div>
               <div>
                 <div style={{ fontSize: 14, fontWeight: 700, margin: 0, lineHeight: 1.2 }}>
-                  Eric Sherwood Assistant
+                  Apex Assistant
                 </div>
                 <div style={{ fontSize: 11, opacity: 0.9, display: "flex", alignItems: "center", gap: 4 }}>
                   <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#4ADE80" }} />
@@ -377,7 +377,7 @@ export function ChatWidget(): React.JSX.Element {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        aria-label="Open Eric Sherwood Assistant"
+        aria-label="Open Apex Assistant"
         style={{
           width: 54,
           height: 54,

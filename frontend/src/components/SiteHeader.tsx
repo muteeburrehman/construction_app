@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 import { Link, NavLink, useLocation } from "react-router-dom"
 import { Menu, X, Phone, ArrowRight } from "lucide-react"
 import { Container } from "@/components/ui/layout"
-import logoSq from "@/assets/wix/logo_square.jpg"
 
 /* ── Brand tokens ── */
 const COBALT   = "#1A3A6B"
@@ -54,27 +53,26 @@ export function SiteHeader(): React.JSX.Element {
           <Link
             to="/"
             className="flex items-center gap-3 rounded-sm"
-            aria-label="Eric Sherwood Construction — Home"
+            aria-label="Apex Construction Group — Home"
           >
-            <img
-              src={logoSq}
-              alt="Eric Sherwood Construction"
-              className="h-9 w-9 rounded-sm object-cover"
-              style={{ border: `1px solid ${PEBBLE}` }}
-              loading="eager"
-            />
+            <div
+              className="h-9 w-9 rounded-sm flex items-center justify-center font-display font-extrabold text-white text-base tracking-tight shadow-sm"
+              style={{ background: `linear-gradient(135deg, ${CHARCOAL} 0%, #111622 100%)`, border: `1px solid ${PEBBLE}` }}
+            >
+              A
+            </div>
             <div className="flex flex-col leading-none">
               <span
                 className="font-display font-extrabold tracking-[-0.035em] leading-none transition-colors duration-200"
                 style={{ fontSize: "0.9375rem", color: CHARCOAL }}
               >
-                Eric Sherwood
+                Apex Construction
               </span>
               <span
                 className="font-display font-semibold tracking-[0.08em] uppercase mt-0.5"
                 style={{ fontSize: "0.5625rem", color: IRON }}
               >
-                Construction · Napa Valley
+                Group · Luxury Builders
               </span>
             </div>
           </Link>
@@ -113,15 +111,15 @@ export function SiteHeader(): React.JSX.Element {
           {/* ── Desktop Actions ── */}
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href="tel:707-255-3875"
+              href="tel:707-555-0192"
               className="flex items-center gap-1.5 font-display font-semibold px-2 py-1.5 transition-colors duration-200"
               style={{ fontSize: "0.75rem", color: IRON }}
               onMouseEnter={e => (e.currentTarget.style.color = CHARCOAL)}
               onMouseLeave={e => (e.currentTarget.style.color = IRON)}
-              aria-label="Call 707-255-3875"
+              aria-label="Call (707) 555-0192"
             >
               <Phone style={{ width: 13, height: 13 }} />
-              <span>707-255-3875</span>
+              <span>(707) 555-0192</span>
             </a>
 
             <div style={{ width: 1, height: 18, background: PEBBLE }} />
@@ -199,12 +197,12 @@ export function SiteHeader(): React.JSX.Element {
               Request an Estimate
             </Link>
             <a
-              href="tel:707-255-3875"
+              href="tel:707-555-0192"
               className="flex items-center justify-center gap-2 font-display font-semibold text-sm py-2"
               style={{ color: "rgba(248,249,252,0.45)" }}
             >
               <Phone style={{ width: 14, height: 14 }} />
-              <span>707-255-3875</span>
+              <span>(707) 555-0192</span>
             </a>
           </div>
         </div>

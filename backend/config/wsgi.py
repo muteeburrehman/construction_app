@@ -1,4 +1,4 @@
-"""WSGI config for Eric Sherwood Construction."""
+"""WSGI config for Apex Construction Group."""
 
 import os
 

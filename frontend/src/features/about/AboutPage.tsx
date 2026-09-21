@@ -5,7 +5,7 @@ import { PageShell } from "@/components/PageShell"
 import { Container } from "@/components/ui/layout"
 import heroImg from "@/assets/wix/hero_commercial.jpg"
 import photoImg from "@/assets/wix/card_residential.jpg"
-import ericFishing from "@/assets/wix/eric_fishing.jpg"
+import aboutHero from "@/assets/wix/about-hero.jpg"
 
 const COBALT   = "#1A3A6B"
 const BLUE     = "#2E5BA8"
@@ -17,30 +17,30 @@ const PEBBLE   = "#DDE2EC"
 const WHITE    = "#FFFFFF"
 
 const TIMELINE = [
-  { year: "1978", text: "Began framing houses in Napa. Discovered a lifelong craft." },
-  { year: "1979", text: "Founded Eric Sherwood Construction in June. Started as a framing specialist." },
-  { year: "1990s", text: "Expanded into ground-up custom residences and architectural remodels." },
-  { year: "2000s", text: "Added commercial division — winery facilities, tasting rooms, tenant improvements." },
-  { year: "Today", text: "Still on site every morning. Still owner-led. CSLB Lic. 902560 in good standing." },
+  { year: "1998", text: "Founded as a specialized structural framing and architectural carpentry group." },
+  { year: "2006", text: "Expanded into ground-up custom luxury residences and hillside architectural estates." },
+  { year: "2014", text: "Established commercial & hospitality division — tasting rooms, winery facilities, and retail." },
+  { year: "2020", text: "Pioneered integrated wildfire-resilient (WUI) building science and smart estate infrastructure." },
+  { year: "Today", text: "Delivering world-class residential and commercial builds with direct principal site supervision." },
 ]
 
 const PILLARS = [
-  { icon: Award, title: "Licensed & Bonded", desc: "CSLB General Contractor License 902560, continuously held in good standing since 1979." },
-  { icon: MapPin, title: "Napa Expertise", desc: "Decades navigating Napa County's hillside terrain, fire-hazard zones, and complex permitting." },
-  { icon: Clock, title: "Owner on Site", desc: "No handoffs to junior supervisors. Eric runs your project from first meeting to final walkthrough." },
+  { icon: Award, title: "Licensed & Bonded", desc: "California Class B General Contractor License #849201, continuously held in impeccable standing." },
+  { icon: MapPin, title: "Wine Country Expertise", desc: "Decades navigating demanding hillside terrain, fire-hazard zones, and complex municipal permitting." },
+  { icon: Clock, title: "Principal on Site", desc: "No handoffs to junior supervisors. Our lead builders direct your project from initial planning to final walkthrough." },
 ]
 
 export function AboutPage(): React.JSX.Element {
   return (
     <PageShell
       seo={{
-        title: "About Eric Sherwood Construction | Napa Valley Builder Since 1979",
-        description: "Founded in June 1979 by Eric Sherwood. Four decades of hands-on building in Napa and Sonoma counties.",
+        title: "About Apex Construction Group | Premier Custom Builders",
+        description: "Founded on uncompromising craftsmanship and engineering precision. Delivering custom residences and commercial landmarks.",
       }}
     >
       {/* ── Hero ── */}
       <section className="relative w-full overflow-hidden" style={{ minHeight: 500 }}>
-        <img src={heroImg} alt="Eric Sherwood Construction craftsmanship" className="absolute inset-0 w-full h-full object-cover object-center" fetchPriority="high" />
+        <img src={heroImg} alt="Apex Construction Group craftsmanship" className="absolute inset-0 w-full h-full object-cover object-center" fetchPriority="high" />
         <div className="absolute inset-0" style={{ background: "linear-gradient(110deg, rgba(14,20,32,0.90) 40%, rgba(14,20,32,0.50) 100%)" }} />
         <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: BLUE }} />
 
@@ -49,14 +49,14 @@ export function AboutPage(): React.JSX.Element {
             <div className="flex items-center gap-3 mb-6">
               <span className="font-display font-semibold tracking-[0.16em] uppercase" style={{ fontSize: "0.625rem", color: "#4A7DD4" }}>Heritage</span>
               <div style={{ width: 24, height: 1, background: "#4A7DD4" }} />
-              <span className="font-display font-semibold tracking-[0.16em] uppercase" style={{ fontSize: "0.625rem", color: "rgba(248,249,252,0.38)" }}>Est. 1979</span>
+              <span className="font-display font-semibold tracking-[0.16em] uppercase" style={{ fontSize: "0.625rem", color: "rgba(248,249,252,0.38)" }}>Est. 1998</span>
             </div>
             <h1 className="font-display font-extrabold tracking-[-0.04em] leading-[1.02] mb-6" style={{ fontSize: "clamp(2.25rem, 5.5vw, 4.25rem)", color: CLOUD }}>
-              Over Four Decades<br />of Napa Valley Craft
+              Over Two Decades<br />of Master Craft
             </h1>
             <p className="font-body leading-[1.7]" style={{ fontSize: "1.0625rem", color: "rgba(248,249,252,0.55)", maxWidth: "50ch" }}>
-              In June 1979, Eric Sherwood asked a neighbor for a summer job in framing.
-              Over forty-five years later, he remains on site every morning.
+              Founded on the principles of structural integrity, aesthetic excellence, and total fiscal transparency,
+              Apex Construction Group delivers distinguished residential and commercial environments throughout California.
             </p>
           </div>
         </Container>
@@ -81,12 +81,12 @@ export function AboutPage(): React.JSX.Element {
         </Container>
       </section>
 
-      {/* ── Dedicated Meet Eric Sherwood Section (From Original Website) ── */}
+      {/* ── Master Builder Heritage Section ── */}
       <section className="py-24 sm:py-32" style={{ background: CLOUD, borderBottom: `1px solid ${PEBBLE}` }}>
         <Container size="wide">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
-            {/* Eric Sherwood Photo & Caption */}
+            {/* Leadership Architectural Photo & Caption */}
             <div className="lg:col-span-5 flex flex-col items-center sm:items-start">
               <div
                 style={{
@@ -95,49 +95,57 @@ export function AboutPage(): React.JSX.Element {
                   borderRadius: 12,
                   boxShadow: "0 10px 30px -5px rgba(26, 58, 107, 0.12)",
                   border: `1px solid ${PEBBLE}`,
-                  maxWidth: 380,
+                  maxWidth: 420,
                   width: "100%",
                 }}
               >
                 <div style={{ overflow: "hidden", borderRadius: 8, background: "#E2E8F0" }}>
                   <img
-                    src={ericFishing}
-                    alt="Eric Sherwood at fishing"
+                    src={aboutHero}
+                    alt="Apex Construction Group Master Craftsmanship"
                     className="w-full object-cover"
-                    style={{ aspectRatio: "1 / 1" }}
+                    style={{ aspectRatio: "4 / 3" }}
                     loading="lazy"
                   />
                 </div>
-                <p
-                  className="font-display font-semibold tracking-wide text-center mt-3 mb-1"
-                  style={{ fontSize: "0.875rem", color: SLATE }}
-                >
-                  Eric Sherwood at fishing
-                </p>
+                <div className="flex items-center justify-between mt-3 px-1">
+                  <p
+                    className="font-display font-semibold tracking-wide"
+                    style={{ fontSize: "0.875rem", color: CHARCOAL }}
+                  >
+                    Architectural Field Direction
+                  </p>
+                  <span className="font-mono text-xs px-2 py-0.5 rounded bg-blue-50 text-blue-800 font-medium">
+                    Lic. #849201
+                  </span>
+                </div>
               </div>
             </div>
 
-            {/* Content from Original Website */}
+            {/* Leadership Content */}
             <div className="lg:col-span-7 flex flex-col">
               <div className="h-[2px] w-12 mb-5" style={{ background: BLUE }} />
               <h2
                 className="font-display font-extrabold tracking-[-0.035em] leading-tight mb-2"
                 style={{ fontSize: "clamp(2rem, 3.8vw, 2.75rem)", color: CHARCOAL }}
               >
-                Eric Sherwood
+                The Master Builder Heritage
               </h2>
               <p
                 className="font-display font-bold tracking-[0.02em] mb-6"
                 style={{ fontSize: "1.125rem", color: BLUE }}
               >
-                Owner & Principal Contractor of Sherwood Inc.
+                Apex Construction Group · Executive Field Direction
               </p>
 
               <p
                 className="font-body leading-[1.8] mb-8"
                 style={{ fontSize: "1.0625rem", color: SLATE }}
               >
-                Eric Sherwood's construction journey began in June 1979 when he asked his neighbor for a summer job. This led to years of hands-on experience in various aspects of construction, from basic labor to framing and eventually running his own business.
+                Our firm was founded on a singular conviction: luxury building demands direct field leadership,
+                rigorous technical acumen, and complete fiscal transparency. Every project on our roster receives
+                direct supervision from our principal builders — guaranteeing that the architectural vision on paper
+                is translated flawlessly into physical reality.
               </p>
 
               <div
@@ -154,13 +162,13 @@ export function AboutPage(): React.JSX.Element {
                   className="font-display font-extrabold tracking-[-0.02em] mb-4"
                   style={{ fontSize: "1.125rem", color: CHARCOAL }}
                 >
-                  Why Choose Us for Your Project?
+                  Why Choose Apex Construction Group?
                 </h3>
                 <ul className="flex flex-col gap-3.5">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 style={{ width: 18, height: 18, color: BLUE, flexShrink: 0, marginTop: 3 }} />
                     <span className="font-body leading-relaxed" style={{ fontSize: "0.9375rem", color: SLATE }}>
-                      <strong style={{ color: CHARCOAL }}>Experienced, thorough, and detail-oriented:</strong> Over four decades directing high-end architectural estates and commercial winery facilities.
+                      <strong style={{ color: CHARCOAL }}>Experienced, thorough, and detail-oriented:</strong> Over two decades directing high-end architectural estates and commercial facilities.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
@@ -172,7 +180,7 @@ export function AboutPage(): React.JSX.Element {
                   <li className="flex items-start gap-3">
                     <CheckCircle2 style={{ width: 18, height: 18, color: BLUE, flexShrink: 0, marginTop: 3 }} />
                     <span className="font-body leading-relaxed" style={{ fontSize: "0.9375rem", color: SLATE }}>
-                      <strong style={{ color: CHARCOAL }}>Owner on site every morning:</strong> Direct personal oversight and open-book billing with zero surprise markups.
+                      <strong style={{ color: CHARCOAL }}>Principal on site every morning:</strong> Direct personal oversight and open-book billing with zero surprise markups.
                     </span>
                   </li>
                 </ul>
@@ -186,17 +194,17 @@ export function AboutPage(): React.JSX.Element {
                   onMouseEnter={e => (e.currentTarget.style.background = COBALT)}
                   onMouseLeave={e => (e.currentTarget.style.background = BLUE)}
                 >
-                  Speak Directly with Eric <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
+                  Schedule Project Consultation <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
                 </Link>
                 <a
-                  href="tel:707-255-3875"
+                  href="tel:707-555-0192"
                   className="inline-flex items-center gap-2 font-display font-semibold rounded-sm px-6 py-3.5 transition-colors duration-200"
                   style={{ border: `1px solid ${PEBBLE}`, color: CHARCOAL, fontSize: "0.875rem", background: WHITE }}
                   onMouseEnter={e => (e.currentTarget.style.borderColor = BLUE)}
                   onMouseLeave={e => (e.currentTarget.style.borderColor = PEBBLE)}
                 >
                   <Phone style={{ width: 14, height: 14, color: BLUE }} />
-                  707-255-3875
+                  (707) 555-0192
                 </a>
               </div>
             </div>
@@ -219,26 +227,26 @@ export function AboutPage(): React.JSX.Element {
                 is the person who runs your job site every morning. No layers of overhead, no handoffs.
               </p>
               <p className="font-body leading-[1.75] mb-5" style={{ fontSize: "1.0625rem", color: SLATE, maxWidth: "56ch" }}>
-                Napa Valley is demanding terrain. Steep hillsides, fire-hazard zones, complex soil profiles,
-                and strict county permitting require a contractor who has navigated these conditions for decades.
+                Wine Country is demanding terrain. Steep hillsides, fire-hazard zones, complex soil profiles,
+                and strict municipal permitting require a contractor who has navigated these conditions for decades.
               </p>
               <p className="font-body leading-[1.75] mb-10" style={{ fontSize: "1.0625rem", color: SLATE, maxWidth: "56ch" }}>
-                Our open-book time-and-materials model means you see exactly where every dollar goes —
-                no markups buried in line items.
+                Our open-book construction management model means you see exactly where every dollar goes —
+                no hidden markups buried in line items.
               </p>
 
               {/* License card */}
               <div className="p-6 mb-8 rounded-sm" style={{ borderLeft: `4px solid ${BLUE}`, background: "rgba(46,91,168,0.06)" }}>
                 <p className="font-display font-semibold tracking-[0.1em] uppercase mb-1" style={{ fontSize: "0.6rem", color: BLUE }}>General Contractor</p>
-                <p className="font-display font-extrabold tracking-[-0.025em]" style={{ fontSize: "1.25rem", color: CHARCOAL }}>CSLB Lic. 902560</p>
-                <p className="font-body mt-2" style={{ fontSize: "0.875rem", color: IRON }}>Continuously licensed in good standing with the California State License Board since 1979.</p>
+                <p className="font-display font-extrabold tracking-[-0.025em]" style={{ fontSize: "1.25rem", color: CHARCOAL }}>CSLB Lic. #849201</p>
+                <p className="font-body mt-2" style={{ fontSize: "0.875rem", color: IRON }}>Class B General Building Contractor continuously licensed and bonded in good standing with the California State License Board.</p>
               </div>
 
               <div className="flex flex-wrap gap-4">
                 <Link to="/contact" className="group inline-flex items-center gap-2 font-display font-semibold rounded-sm px-6 py-3 transition-colors duration-200" style={{ background: BLUE, color: WHITE, fontSize: "0.875rem" }}
                   onMouseEnter={e => (e.currentTarget.style.background = COBALT)}
                   onMouseLeave={e => (e.currentTarget.style.background = BLUE)}>
-                  Work with Eric Sherwood <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
+                  Work with Apex Construction Group <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
                 </Link>
                 <Link to="/work" className="inline-flex items-center gap-2 font-display font-semibold rounded-sm px-6 py-3 transition-colors duration-200" style={{ border: `1px solid ${PEBBLE}`, color: CHARCOAL, fontSize: "0.875rem" }}
                   onMouseEnter={e => (e.currentTarget.style.borderColor = BLUE)}
@@ -280,7 +288,7 @@ export function AboutPage(): React.JSX.Element {
               Ready to start a conversation?
             </h2>
             <p className="font-body leading-[1.7]" style={{ fontSize: "1.0625rem", color: "rgba(248,249,252,0.50)", maxWidth: "42ch" }}>
-              We schedule site walkthroughs with Eric directly — no sales intermediaries.
+              We schedule site walkthroughs with our principal builders directly — no sales intermediaries.
             </p>
             <div className="flex flex-wrap justify-center gap-4 pt-2">
               <Link to="/contact" className="group inline-flex items-center gap-2.5 font-display font-semibold rounded-sm px-8 py-4 transition-colors duration-200" style={{ background: BLUE, color: WHITE, fontSize: "0.9375rem" }}
@@ -288,10 +296,10 @@ export function AboutPage(): React.JSX.Element {
                 onMouseLeave={e => (e.currentTarget.style.background = BLUE)}>
                 Request an Estimate <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
               </Link>
-              <a href="tel:707-255-3875" className="inline-flex items-center gap-2.5 font-display font-semibold rounded-sm px-8 py-4 transition-colors duration-200" style={{ border: "1px solid rgba(248,249,252,0.18)", color: "rgba(248,249,252,0.65)", fontSize: "0.9375rem" }}
+              <a href="tel:707-555-0192" className="inline-flex items-center gap-2.5 font-display font-semibold rounded-sm px-8 py-4 transition-colors duration-200" style={{ border: "1px solid rgba(248,249,252,0.18)", color: "rgba(248,249,252,0.65)", fontSize: "0.9375rem" }}
                 onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(248,249,252,0.38)"; e.currentTarget.style.color = CLOUD }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(248,249,252,0.18)"; e.currentTarget.style.color = "rgba(248,249,252,0.65)" }}>
-                <Phone style={{ width: 16, height: 16 }} /> 707-255-3875
+                <Phone style={{ width: 16, height: 16 }} /> (707) 555-0192
               </a>
             </div>
           </div>
